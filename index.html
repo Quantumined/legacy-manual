@@ -25,7 +25,7 @@
             min-height: 80vh; 
         }
 
-        /* WATERMARK: Standard View */
+        /* WATERMARK: Fits to page */
         .app-container::before {
             content: "";
             position: absolute;
@@ -46,7 +46,7 @@
         .header img { width: 100px; height: auto; margin-bottom: 10px; border-radius: 12px; }
         h1 { margin: 0; color: #8b4513; font-size: 24px; letter-spacing: 1px; }
 
-        /* MODAL STYLES */
+        /* MODAL (POPUP) STYLES */
         .modal-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(62, 39, 35, 0.98); 
@@ -66,7 +66,7 @@
             font-weight: bold; font-size: 16px; cursor: pointer; text-transform: uppercase;
         }
 
-        /* INTERFACE STYLES */
+        /* SEARCH INTERFACE STYLES */
         .search-box { margin: 20px 0; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; z-index: 2; position: relative; }
         input { padding: 12px; border: 2px solid #d7ccc8; border-radius: 8px; width: 70%; font-size: 16px; outline: none; }
         .btn-action { padding: 12px 20px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; color: white; }
@@ -96,7 +96,7 @@
                 padding: 30px !important;
             }
             
-            /* Watermark: Fit to Page Boundary */
+            /* Watermark: Fit to page without overflow */
             .app-container::before { 
                 opacity: 0.04 !important; 
                 width: 90% !important; 
@@ -167,17 +167,21 @@
 <div id="introModal" class="modal-overlay">
     <div class="modal-content">
         <div class="intro-title">System Initialization: The Pen's Script</div>
+        
         <p style="font-size: 15px; line-height: 1.6;">
-            This manual is a <strong>Refactoring Tool</strong> for human character. In a world of surface-level definitions, we return to the <strong>Root Logic</strong> ($A-Ṣ-L$) found in the Quranic $Q-L-M$ framework.
+            This manual is a <strong>Refactoring Tool</strong> for human character. In a world of surface-level definitions, we return to the <strong>Root Logic</strong> ($A-Ṣ-L$) found in the Quranic $Q-L-M$ (The Pen) framework.
         </p>
+        
         <ul class="intro-list">
-            <li><strong>Nouns to Functions:</strong> Strip away ego-driven titles to reveal the <em>Logic</em> behind them.</li>
-            <li><strong>The Method:</strong> Every role is a <em>Script</em> to be executed with precision.</li>
-            <li><strong>Legacy:</strong> A guide for those who follow.</li>
+            <li><strong>Nouns to Functions:</strong> We strip away the ego-driven titles of life and reveal the <em>Logic</em> behind them.</li>
+            <li><strong>The Method:</strong> Every role you hold—from Provider to Son—is a <em>Script</em> to be executed with precision.</li>
+            <li><strong>Legacy:</strong> This system is designed to be lived, mastered, and left behind as a guide for those who follow.</li>
         </ul>
+        
         <p style="font-style: italic; font-size: 13px; margin: 15px 0; color: #8b4513; border-top: 1px solid #eee; padding-top: 10px; text-align: center;">
             "Calibrate your heart ($Q-L-B$), route your provisions ($R-Z-Q$), and master the pairing ($Z-W-J$)."
         </p>
+
         <button class="btn-begin" onclick="closeModal()">Begin Transformation</button>
     </div>
 </div>
