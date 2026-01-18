@@ -11,7 +11,38 @@
     
     <style>
         body { font-family: 'Segoe UI', sans-serif; background-color: #f4f1ea; color: #3e2723; text-align: center; padding: 20px; margin: 0; }
-        .app-container { max-width: 600px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        
+        /* MODIFIED app-container: Added Watermark Logic */
+        .app-container { 
+            max-width: 600px; 
+            margin: auto; 
+            background: white; 
+            padding: 30px; 
+            border-radius: 15px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+            position: relative; /* Required for watermark positioning */
+            overflow: hidden; 
+            z-index: 1;
+        }
+
+        /* NEW: Watermark Styling */
+        .app-container::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%; /* Large size in center */
+            height: 80%;
+            background-image: url('logo.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            opacity: 0.07; /* Makes it a faint watermark */
+            z-index: -1; /* Places it behind text */
+            pointer-events: none;
+        }
+
         .header img { width: 100px; height: auto; margin-bottom: 10px; border-radius: 12px; }
         h1 { margin: 0; color: #8b4513; font-size: 24px; letter-spacing: 1px; }
 
@@ -36,28 +67,30 @@
         }
 
         /* SEARCH INTERFACE STYLES */
-        .search-box { margin: 20px 0; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+        .search-box { margin: 20px 0; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; z-index: 2; }
         input { padding: 12px; border: 2px solid #d7ccc8; border-radius: 8px; width: 70%; font-size: 16px; outline: none; }
         .btn-action { padding: 12px 20px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; color: white; }
         .btn-search { background-color: #8b4513; }
         .btn-view { background-color: #5d4037; }
-        .btn-print { background-color: #4e342e; } /* Dark brown for Print */
+        .btn-print { background-color: #4e342e; }
 
-        #output-box { margin-top: 20px; padding: 20px; border-radius: 10px; min-height: 100px; text-align: left; border: 1px dashed #d7ccc8; background: #fafafa; }
+        #output-box { margin-top: 20px; padding: 20px; border-radius: 10px; min-height: 100px; text-align: left; border: 1px dashed #d7ccc8; background: rgba(250, 250, 250, 0.8); z-index: 2; position: relative; }
         .root-highlight { color: #8b4513; font-weight: bold; font-size: 1.2em; }
 
-        /* PRINT STYLING - Hides the interface for a clean document */
+        /* PRINT STYLING */
         #print-header { display: none; text-align: left; border-bottom: 2px solid #8b4513; margin-bottom: 20px; padding-bottom: 10px; }
-        /* ADDITION: Logo for printed header */
         #print-header img { width: 80px; height: auto; margin-bottom: 10px; display: block; }
 
         @media print {
-            /* ADDITION: Force colors and images on Android */
             * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
             body { background: white !important; padding: 0; }
             .modal-overlay, .search-box, .btn-action, .header img { display: none !important; }
             .app-container { box-shadow: none !important; border: none !important; max-width: 100% !important; margin: 0 !important; }
-            #output-box { border: none !important; background: white !important; padding: 0 !important; }
+            
+            /* Ensures watermark appears in print */
+            .app-container::before { opacity: 0.05 !important; width: 60% !important; height: 60% !important; }
+            
+            #output-box { border: none !important; background: transparent !important; padding: 0 !important; }
             #print-header { display: block !important; }
             h1 { color: #8b4513 !important; }
         }
