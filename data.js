@@ -29,7 +29,7 @@ const manual = {
         method: "The function of 'Extraction.'",
         legacy: "Teaching how to squeeze every drop of meaning from a day—recognizing that time is the only non-renewable input."
     },
-        "father": {
+    "father": {
         root: "A-B-W (أ ب و)",
         logic: "The root for 'Nourishing' or 'Cultivating.' It is the preparation of the soil so that a seed can manifest its internal potential.",
         method: "The function of 'Cultivation.'",
@@ -209,7 +209,7 @@ const manual = {
         method: "The function of 'Alerting.'",
         legacy: "Using fear as a diagnostic tool rather than a governor—listening to the alarm without freezing the OS."
     }, 
-        "hope": {
+    "hope": {
         root: "R-J-W (ر ج و)",
         logic: "The anticipation of a positive output despite current system lag. Believing in the Source’s consistency.",
         method: "The function of 'Expectation.'",
@@ -419,7 +419,7 @@ const manual = {
         method: "The function of 'Dual-Processing.'",
         legacy: "Integrity requires the backend and frontend to be perfectly synced."
     }, 
-        "pen": {
+    "pen": {
         root: "Q-L-M (ق ل م)",
         logic: "The tool of 'Scripting.' The medium through which the Source Code is manifested into physical documentation.",
         method: "The function of 'Scripting.'",
