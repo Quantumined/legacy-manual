@@ -5,47 +5,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Pen's Script | Legacy Manual</title>
     <style>
-        :root { --primary: #000; --accent: #b45309; --bg: #fdfcfb; }
-        body { font-family: 'Georgia', serif; background: var(--bg); color: var(--primary); padding: 15px; line-height: 1.6; }
-        .container { max-width: 600px; margin: 0 auto; background: white; border: 1px solid #d1d1d1; padding: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        .header { text-align: center; border-bottom: 2px solid #000; margin-bottom: 30px; padding-bottom: 10px; }
-        .header h1 { font-size: 1.2rem; text-transform: uppercase; letter-spacing: 3px; margin: 0; }
-        input { width: 100%; padding: 15px; border: 1px solid #ccc; font-family: inherit; font-size: 1rem; box-sizing: border-box; margin-bottom: 10px; border-radius: 4px; }
-        button { width: 100%; background: var(--primary); color: white; padding: 15px; border: none; cursor: pointer; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; border-radius: 4px; }
-        #auditResult { display: none; margin-top: 30px; }
-        .refactor-section { margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
-        .label { font-weight: bold; color: var(--accent); text-transform: uppercase; font-size: 0.75rem; display: block; }
-        .content { font-size: 1.05rem; display: block; margin-top: 5px; }
-        .arabic { font-size: 1.3rem; float: right; color: #000; }
+        :root { 
+            --primary: #1a1a1a; 
+            --accent: #8b4513; 
+            --bg: #f4f1ea; 
+            --paper: #ffffff;
+        }
+        body { 
+            font-family: 'Constantia', 'Georgia', serif; 
+            background-color: var(--bg); 
+            color: var(--primary); 
+            padding: 20px; 
+            line-height: 1.7; 
+        }
+        .container { 
+            max-width: 550px; 
+            margin: 0 auto; 
+            background: var(--paper); 
+            border: 1px solid #d1c7ac; 
+            padding: 40px 30px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border-radius: 2px;
+        }
+        .header { text-align: center; margin-bottom: 40px; border-bottom: 2px double var(--accent); padding-bottom: 20px;}
+        .header h1 { font-size: 1.4rem; text-transform: uppercase; letter-spacing: 5px; margin: 0; color: var(--accent); }
+        .header p { font-style: italic; font-size: 0.9rem; margin-top: 10px; color: #666; }
+        
+        .input-group { margin-bottom: 30px; text-align: center; }
+        input { 
+            width: 100%; padding: 12px; border: none; border-bottom: 2px solid #d1c7ac;
+            background: transparent; font-family: inherit; font-size: 1.1rem; text-align: center; outline: none;
+        }
+        button { 
+            background: var(--primary); color: white; padding: 12px 25px; border: none; 
+            cursor: pointer; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; margin-top: 20px;
+        }
+
+        #auditResult { display: none; margin-top: 40px; animation: fadeIn 0.8s; }
+        .refactor-section { margin-bottom: 30px; }
+        .label { font-weight: bold; color: var(--accent); text-transform: uppercase; font-size: 0.7rem; letter-spacing: 1px; display: block; margin-bottom: 8px; }
+        .content { font-size: 1.05rem; display: block; padding-left: 10px; border-left: 1px solid #eee; }
+        .arabic { font-size: 2rem; float: right; color: var(--primary); font-family: "Times New Roman", serif; margin-top: -15px; }
+        .legacy-box { background: #fdfaf4; padding: 15px; border: 1px italic #eee; font-style: italic; border-radius: 5px; margin-top: 10px; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body>
 <div class="container">
-    <div class="header"><h1>The Pen's Script</h1></div>
-    <input type="text" id="nounIn" placeholder="Search Noun (Husband, Son, Provider...)">
-    <button onclick="runAudit()">Audit Identity</button>
+    <div class="header">
+        <h1>The Pen's Script</h1>
+        <p>"How to Live" — A System Refactor</p>
+    </div>
+    
+    <div class="input-group">
+        <input type="text" id="nounIn" placeholder="Search Identity (e.g. Husband, Son, Provider...)">
+        <button onclick="runAudit()">Refactor Identity</button>
+    </div>
 
     <div id="auditResult">
         <div class="refactor-section">
-            <span class="label">The Noun</span>
-            <span class="content" id="rNoun"></span>
+            <span class="label">The Noun (Status/Identity)</span>
+            <span class="content" id="rNoun" style="font-weight: bold; font-size: 1.2rem;"></span>
         </div>
         <div class="refactor-section">
-            <span class="label">The Quranic Root</span>
+            <span class="label">The Quranic Root (Rasm)</span>
             <span id="rArabic" class="arabic"></span>
             <span class="content" id="rRoot"></span>
         </div>
         <div class="refactor-section">
-            <span class="label">The Logic</span>
+            <span class="label">The Logic (System Operator)</span>
             <span class="content" id="rLogic"></span>
         </div>
         <div class="refactor-section">
-            <span class="label">The Method</span>
+            <span class="label">The Method (Function)</span>
             <span class="content" id="rMethod"></span>
         </div>
         <div class="refactor-section">
-            <span class="label">The Legacy</span>
-            <span class="content" id="rLegacy"></span>
+            <span class="label">The Legacy (How to Live)</span>
+            <div class="legacy-box" id="rLegacy"></div>
         </div>
     </div>
 </div>
@@ -53,25 +90,52 @@
 <script>
     const manual = {
         "husband": {
-            root: "Z-W-J",
-            arabic: "ز و ج",
-            logic: "In the Rasm, this is a Logical Operator. A Zawj is a 'Pair' or a 'Counterpart.' In code, this is Symmetry/Parity.",
-            method: "The function isn't 'being a husband'; it is 'Pairing'—balancing another soul.",
-            legacy: "Teaching a Method of Pairing: how to create synergy where 1 + 1 = 3."
+            root: "Z-W-J", arabic: "ز و ج",
+            logic: "In the Rasm, this isn't a 'title' of authority; it is a Logical Operator. A Zawj is a 'Pair' or a 'Counterpart.' In code, this is like Symmetry or Parity.",
+            method: "The function isn't 'being a husband'; it is 'Pairing.'",
+            legacy: "You aren't leaving behind the memory of a 'Great Husband'. You are teaching a Method of Pairing—how to balance another soul, how to create synergy where 1 + 1 = 3."
         },
         "son": {
-            root: "B-N-Y",
-            arabic: "ب ن ي",
-            logic: "The root for 'Building.' An Ibn (Son) is an extension of the structure.",
-            method: "The function is 'Continuing the Build.'",
-            legacy: "Refactoring the 'Source Code' of your parents for the next iteration."
+            root: "B-N-Y", arabic: "ب ن ي",
+            logic: "The root for 'Building' or 'Constructing.' An Ibn (Son) is essentially a 'Building Block' or an 'Extension of the Structure.'",
+            method: "Your function isn't just 'being a son'; it is 'Continuing the Build.'",
+            legacy: "You are the current 'iteration' of a project started by your parents. Your method is how you take their 'Source Code' and refactor it for the next version."
         },
         "provider": {
-            root: "R-Z-Q",
-            arabic: "ر ز ق",
-            logic: "You are the 'Route' (Conduit), not the Source.",
-            method: "The function is 'Routing' resources without friction.",
-            legacy: "Leaving behind a method of flow rather than a memory of hoarding."
+            root: "R-Z-Q", arabic: "ر ز ق",
+            logic: "Rizq is 'Input Data.' The Provider (Ar-Razzaq) is a Constant Global Variable—it is Allah. You are not the Source; you are the Router.",
+            method: "In a network, a router doesn't create the data; it efficiently directs packets to where they are needed.",
+            legacy: "If you try to be the Source, you will crash. As a Router, your method becomes Resource Management—ensuring Rizq reaches your family with the highest bandwidth of love."
+        },
+        "father": {
+            root: "A-B-W", arabic: "أ ب و",
+            logic: "Linked to nourishment and protection. The one who prepares the soil so the seed can grow.",
+            method: "The function isn't 'being a father'; it is 'Cultivating.'",
+            legacy: "Leaving behind a pH-balanced environment. You are teaching how to nourish a soul until it can stand on its own roots."
+        },
+        "leader": {
+            root: "A-M-M", arabic: "أ م م",
+            logic: "The 'Front' or 'Direction.' Shared root with 'Mother'—the origin of direction.",
+            method: "The function isn't 'commanding'; it is 'Orientation.' Providing a spiritual compass.",
+            legacy: "You are a compass, not a king. Your legacy is teaching others how to find 'True North' (H-D-Y) so they never feel lost."
+        },
+        "friend": {
+            root: "S-D-Q", arabic: "ص د ق",
+            logic: "From 'Sidq' (Truth). A Sadiq is a Truth-Validator.",
+            method: "The function isn't 'hanging out'; it is 'Verification.'",
+            legacy: "A mirror that reflects the truest version of another. You leave behind a method of Authentic Reflection."
+        },
+        "neighbor": {
+            root: "J-W-R", arabic: "ج و ر",
+            logic: "To 'seek sanctuary' or 'protect.' A neighbor is anyone inside your shield.",
+            method: "The function isn't 'living nearby'; it is 'Sanctuary-Building.'",
+            legacy: "Teaching how to be a Safe Zone. Turning a physical house into a spiritual fortress for the whole radius."
+        },
+        "successor": {
+            root: "KH-L-F", arabic: "خ ل ف",
+            logic: "Khalifa—to come after or 'stand in for.' The ultimate Legacy Noun.",
+            method: "The function isn't 'owning the past'; it is 'Maintaining the Flow.'",
+            legacy: "You are a link in a chain. Your method is how to take what was given, refactor it, and pass it on with zero packet loss."
         }
     };
 
@@ -79,7 +143,7 @@
         const val = document.getElementById('nounIn').value.toLowerCase().trim();
         const res = manual[val];
         if (res) {
-            document.getElementById('rNoun').innerText = val.toUpperCase();
+            document.getElementById('rNoun').innerText = val.charAt(0).toUpperCase() + val.slice(1);
             document.getElementById('rRoot').innerText = res.root;
             document.getElementById('rArabic').innerText = res.arabic;
             document.getElementById('rLogic').innerText = res.logic;
@@ -87,7 +151,7 @@
             document.getElementById('rLegacy').innerText = res.legacy;
             document.getElementById('auditResult').style.display = 'block';
         } else {
-            alert("This noun hasn't been refactored yet. Use 'Husband', 'Son', or 'Provider'.");
+            alert("Identity not yet refactored. Available: Husband, Son, Provider, Father, Leader, Friend, Neighbor, Successor.");
         }
     }
 </script>
