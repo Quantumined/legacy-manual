@@ -60,9 +60,30 @@
         #print-header img { width: 80px; height: auto; margin-bottom: 10px; display: block; }
 
         @media print {
-            body { background: white !important; padding: 0; }
+            * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+            body { background: white !important; padding: 0; margin: 0; }
             .modal-overlay, .search-box, .btn-action, .header img { display: none !important; }
-            .app-container { box-shadow: none !important; border: none !important; max-width: 100% !important; margin: 0 !important; }
+            
+            .app-container { 
+                box-shadow: none !important; 
+                border: none !important; 
+                max-width: 100% !important; 
+                margin: 0 !important; 
+                padding: 40px !important;
+                min-height: 98vh;
+                background-image: url('logo.png') !important;
+                background-repeat: no-repeat !important;
+                background-position: center center !important;
+                background-size: 80% auto !important;
+                position: relative;
+            }
+
+            #output-box, #print-header { 
+                position: relative; 
+                z-index: 10; 
+                background: transparent !important;
+            }
+
             #output-box { border: none !important; padding: 0 !important; }
             #print-header { display: block !important; }
             h1 { color: #8b4513 !important; }
