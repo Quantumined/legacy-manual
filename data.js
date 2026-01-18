@@ -598,5 +598,12 @@ const manual = {
         logic: "The 'Terminal.' The final endpoint where all data packets are resolved and settled.",
         method: "The function of 'Resolution.'",
         legacy: "A life lived with the end in mind—ensuring the final trajectory is aimed at Peace."
+    },
+    "woman": {
+        root: "N-S-W (ن س و)",
+        logic: "To 'Postpone' or 'Delay.' This isn't about lateness; it is the logic of 'Gestation.' It is the capacity to hold a process in a state of development until it is ready for manifestation.",
+        method: "The function of 'Nurturing Maturity.'",
+        legacy: "Teaching the value of the 'Wait'—showing that the most profound results come from processes that are allowed to mature in a protected, patient environment."
     }
+
 };
