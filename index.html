@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Pen's Script | Lead Architect</title>
+    <style>
+        :root { --primary: #000; --accent: #b45309; --bg: #f9f9f7; }
+        body { font-family: 'Courier New', Courier, monospace; background: var(--bg); color: var(--primary); padding: 20px; }
+        .container { max-width: 750px; margin: 0 auto; background: white; border: 1px solid #000; padding: 40px; box-shadow: 10px 10px 0px #eee; }
+        
+        .architect-prompt { font-style: italic; color: #444; border-left: 2px solid var(--accent); padding-left: 20px; margin-bottom: 30px; font-size: 1.1rem; }
+        
+        .input-group { margin-bottom: 20px; }
+        input { width: 100%; padding: 15px; border: 2px solid #000; font-family: inherit; font-size: 1.2rem; box-sizing: border-box; outline: none; }
+        
+        button { width: 100%; background: var(--primary); color: white; padding: 15px; border: none; cursor: pointer; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; }
+        button:hover { background: var(--accent); }
+
+        #auditResult { display: none; margin-top: 40px; border-top: 5px solid #000; padding-top: 20px; }
+        .step { margin-bottom: 20px; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
+        .step-num { font-weight: bold; font-size: 0.7rem; color: var(--accent); text-transform: uppercase; }
+        .step-title { font-weight: bold; display: block; margin-top: 5px; }
+        
+        .code-block { background: #1a1a1a; color: #00ff00; padding: 15px; overflow-x: auto; font-size: 0.8rem; margin: 10px 0; }
+        .status { font-weight: bold; color: #059669; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="architect-prompt">
+        "A question for the Lead Architect: If we were to look at the 'Source Code' of your own life right now, which Noun feels most like a 'corrupt vowel'?"
+    </div>
+
+    <div class="input-group">
+        <input type="text" id="nounIn" placeholder="Enter Noun (e.g. Husband, Son, Provider...)">
+    </div>
+
+    <button onclick="autoAudit()">Run System Audit</button>
+
+    <div id="auditResult">
+        <h2 style="text-align:center;">AUDIT LOG: THE PEN'S SCRIPT</h2>
+        
+        <div class="step"><span class="step-num">Step 1</span><span class="step-title">The Root</span><div id="s1"></div></div>
+        <div class="step"><span class="step-num">Step 2</span><span class="step-title">Standard Voweled Patch</span><div id="s2"></div></div>
+        <div class="step"><span class="step-num">Step 3</span><span class="step-title">The Interpretation</span><div id="s3"></div></div>
+        <div class="step"><span class="step-num">Step 4</span><span class="step-title">Refactored Code</span><div class="code-block"><pre id="s4"></pre></div></div>
+        <div class="step"><span class="step-num">Step 5</span><span class="step-title">Active Logic</span><div id="s5"></div></div>
+        <div class="step"><span class="step-num">Step 6</span><span class="step-title">Quranic Constraint</span><div id="s6" style="font-style: italic;"></div></div>
+        <div class="step"><span class="step-num">Step 7</span><span class="step-title">System Audit Result</span><div class="status">INTEGRITY VERIFIED</div></div>
+        <div class="step" style="border:none;"><span class="step-num">Step 8</span><span class="step-title">Timestamp</span><div id="s8"></div></div>
+    </div>
+</div>
+
+<script>
+    const scriptLibrary = {
+        "husband": {
+            root: "Z-W-J (Pairing)",
+            patch: "Identity stripped to the fundamental pair.",
+            interp: "The noun is a social title; the script requires the action of harmonious pairing.",
+            logic: "Operate today not as an owner, but as the completion of a duality.",
+            constraint: "And of everything We created pairs that you may remember. (51:49)"
+        },
+        "son": {
+            root: "B-N-Y (Building)",
+            patch: "Identity stripped to structural lineage.",
+            interp: "The noun is biological; the script requires the action of constructing a legacy.",
+            logic: "Operate today as a foundation stone for those who come after.",
+            constraint: "A good word is like a good tree, its root firmly fixed. (14:24)"
+        },
+        "provider": {
+            root: "R-Z-Q (Routing)",
+            patch: "Identity stripped to resource management.",
+            interp: "The noun implies being the source; the script reveals you as the conduit.",
+            logic: "Direct the flow of resources today without the friction of ownership.",
+            constraint: "And provide for them from it... and speak to them words of kindness. (4:5)"
+        }
+    };
+
+    function autoAudit() {
+        const noun = document.getElementById('nounIn').value.toLowerCase().trim();
+        const data = scriptLibrary[noun] || {
+            root: "UNKNOWN_ROOT",
+            patch: "GENERIC_IDENTITY_STRIP",
+            interp: "Noun not recognized in core system dump. Stripping vowels to reveal basic striving.",
+            logic: "Return to the root of 'Striving' (J-H-D) until specific refactoring is available.",
+            constraint: "And that there is not for man except that [good] which he strives for. (53:39)"
+        };
+
+        document.getElementById('s1').innerText = data.root;
+        document.getElementById('s2').innerText = data.patch;
+        document.getElementById('s3').innerText = data.interp;
+        document.getElementById('s4').innerText = `
+[SYSTEM_REFACTOR]
+TARGET: ${noun.toUpperCase()}
+PATCH: ${data.root}
+STATUS: COMPILING...
+-------------------
+void apply() {
+  strip_vowels("${noun}");
+  execute_root("${data.root}");
+}`;
+        document.getElementById('s5').innerText = data.logic;
+        document.getElementById('s6').innerText = data.constraint;
+        document.getElementById('s8').innerText = new Date().toLocaleString();
+
+        document.getElementById('auditResult').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
