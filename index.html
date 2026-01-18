@@ -1,90 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="manifest" href="manifest.json">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Pen's Script | Legacy Manual</title>
+    <title>The Pen's Script</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
     <style>
-        :root { --primary: #1a1a1a; --accent: #8b4513; --bg: #f4f1ea; --paper: #ffffff; }
-        body { font-family: 'Constantia', 'Georgia', serif; background-color: var(--bg); color: var(--primary); padding: 20px; line-height: 1.7; }
-        .container { max-width: 700px; margin: 0 auto; background: var(--paper); border: 1px solid #d1c7ac; padding: 40px 30px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
-        .header { text-align: center; border-bottom: 2px double var(--accent); padding-bottom: 20px; margin-bottom: 25px; }
-        .header h1 { font-size: 1.6rem; text-transform: uppercase; letter-spacing: 5px; margin: 0; color: var(--accent); }
-        input { width: 100%; padding: 15px; border: 2px solid #d1c7ac; background: #fff; font-family: inherit; font-size: 1.1rem; text-align: center; box-sizing: border-box; outline: none; }
-        .btn-box { display: flex; gap: 10px; justify-content: center; margin-top: 15px; }
-        button { background: var(--primary); color: white; padding: 12px 25px; border: none; cursor: pointer; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; }
-        #auditResult { display: none; margin-top: 35px; border-top: 3px solid var(--accent); padding-top: 25px; animation: fadeIn 0.4s ease; }
-        .section { margin-bottom: 25px; border-bottom: 1px solid #f0f0f0; padding-bottom: 10px; }
-        .label { font-weight: bold; color: var(--accent); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px; display: block; }
-        .text { font-size: 1.1rem; display: block; margin-top: 5px; text-align: justify; }
-        .arabic-float { font-size: 3.5rem; float: right; margin-left: 20px; color: var(--primary); line-height: 1; opacity: 0.9; }
-        .legacy-highlight { background: #fdfaf4; border: 1px solid #d1c7ac; padding: 25px; margin-top: 20px; border-left: 5px solid var(--accent); }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f1ea; color: #3e2723; text-align: center; padding: 20px; }
+        .app-container { max-width: 600px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .header img { width: 150px; height: auto; margin-bottom: 10px; }
+        h1 { margin: 0; color: #8b4513; font-size: 24px; }
+        #dedication { margin: 20px 0; padding: 15px; background: rgba(139, 69, 19, 0.05); border-left: 4px solid #8b4513; text-align: left; font-size: 14px; line-height: 1.5; border-radius: 5px; }
+        .search-box { margin: 20px 0; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+        input { padding: 12px; border: 2px solid #d7ccc8; border-radius: 8px; width: 70%; outline: none; }
+        button { padding: 12px 20px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; transition: 0.3s; }
+        .btn-search { background-color: #8b4513; color: white; }
+        .btn-view { background-color: #5d4037; color: white; }
+        button:hover { opacity: 0.9; transform: translateY(-2px); }
+        #output-box { margin-top: 20px; padding: 20px; border-radius: 10px; min-height: 100px; text-align: left; border: 1px dashed #d7ccc8; transition: all 0.5s; }
+        .root-highlight { color: #8b4513; font-weight: bold; font-size: 1.2em; }
     </style>
 </head>
 <body>
-<div class="container">
+
+<div class="app-container">
     <div class="header">
+        <img src="logo.png" alt="The Pen's Script Logo">
         <h1>The Pen's Script</h1>
-        <p>Refactoring Identity into Method</p>
+        <p>Legacy Manual: Refactoring Identity into Method</p>
     </div>
-    <input type="text" id="nounIn" placeholder="Enter Noun (e.g. Husband, Merchant, Time...)" onkeypress="if(event.key === 'Enter') runAudit()">
-    <div class="btn-box">
-        <button onclick="runAudit()">Execute Refactor</button>
-        <button onclick="listAll()" style="background: #5d4037;">View All Roots</button>
-        <button onclick="window.print()" style="background: var(--accent);">Export PDF</button>
+
+    <div id="dedication">
+        <strong>System Briefing:</strong> This is a calibration tool for the human experience. It refactors common social nouns into their original functional logic. 
+        <em>"Use this script to strip away the noise of ego and return to the Root."</em>
     </div>
-    <div id="auditResult">
-        <div class="section">
-            <span class="label">1. The Noun</span>
-            <span class="text" id="rNoun" style="font-weight: bold; font-size: 1.3rem;"></span>
-        </div>
-        <div class="section">
-            <span class="arabic-float" id="rArabic"></span>
-            <span class="label">2. The Quranic Root (Rasm)</span>
-            <span class="text" id="rRoot"></span>
-        </div>
-        <div class="section">
-            <span class="label">3. The Logic (System Operator)</span>
-            <span class="text" id="rLogic"></span>
-        </div>
-        <div class="section">
-            <span class="label">4. The Method (Function)</span>
-            <span class="text" id="rMethod" style="color: var(--accent); font-weight: bold;"></span>
-        </div>
-        <div class="legacy-highlight">
-            <span class="label">5. The Legacy (How to Live)</span>
-            <span class="text" id="rLegacy"></span>
-        </div>
+
+    <div class="search-box">
+        <input type="text" id="nounInput" placeholder="Search a noun (e.g., Provider)...">
+        <button class="btn-search" onclick="searchNoun()">Search</button>
+        <button class="btn-view" onclick="listAll()">View All Roots</button>
+    </div>
+
+    <div id="output-box">
+        <em>Search results will appear here...</em>
     </div>
 </div>
+
 <script src="data.js"></script>
 <script>
-    function runAudit() {
-        const query = document.getElementById('nounIn').value.toLowerCase().trim();
-        if (typeof manual === 'undefined') { return alert("data.js not found in this folder."); }
-        const data = manual[query];
-        if (data) {
-            document.getElementById('rNoun').innerText = query.toUpperCase();
-            document.getElementById('rRoot').innerText = data.root;
-            const ar = data.root.match(/\(([^)]+)\)/);
-            document.getElementById('rArabic').innerText = ar ? ar[1] : "";
-            document.getElementById('rLogic').innerText = data.logic;
-            document.getElementById('rMethod').innerText = data.method;
-            document.getElementById('rLegacy').innerText = data.legacy;
-            document.getElementById('auditResult').style.display = 'block';
-        } else { alert("Noun not refactored yet."); }
-        function listAll() {
+    function searchNoun() {
+        const query = document.getElementById('nounInput').value.toLowerCase().trim();
         const output = document.getElementById('output-box');
-            output.innerHTML = "<h3>System Directory:</h3>";
-        for (let key in manual) {
-        if (key !== "instruction") {
-            output.innerHTML += `<p><strong>${key.toUpperCase()}</strong>: ${manual[key].root}</p>`;
+        
+        if (manual[query]) {
+            const item = manual[query];
+            output.innerHTML = `
+                <h2 style="text-transform: capitalize;">${query}</h2>
+                <p><span class="root-highlight">Root: ${item.root}</span></p>
+                <p><strong>Logic:</strong> ${item.logic}</p>
+                <p><strong>Method:</strong> ${item.method}</p>
+                <p><strong>Legacy:</strong> ${item.legacy}</p>
+            `;
+        } else {
+            output.innerHTML = "<p style='color:red;'>Noun not found in the current script. Try 'man', 'woman', or 'provider'.</p>";
         }
     }
-}
+
+    function listAll() {
+        const output = document.getElementById('output-box');
+        let htmlContent = "<h3>System Directory:</h3><ul style='list-style:none; padding:0;'>";
+        
+        for (let key in manual) {
+            if (key !== "instruction") {
+                htmlContent += `<li style="margin-bottom:15px; border-bottom:1px solid #eee; padding-bottom:10px;">
+                    <strong style="text-transform: uppercase; color:#8b4513;">${key}</strong><br>
+                    <span>Root: ${manual[key].root}</span><br>
+                    <small>${manual[key].method}</small>
+                </li>`;
+            }
+        }
+        htmlContent += "</ul>";
+        output.innerHTML = htmlContent;
     }
 </script>
+
 </body>
 </html>
