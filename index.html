@@ -10,84 +10,91 @@
         .container { max-width: 650px; margin: 0 auto; background: var(--paper); border: 1px solid #d1c7ac; padding: 40px 30px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
         .header { text-align: center; border-bottom: 2px double var(--accent); padding-bottom: 20px; margin-bottom: 25px; }
         .header h1 { font-size: 1.4rem; text-transform: uppercase; letter-spacing: 5px; margin: 0; color: var(--accent); }
-        input { width: 100%; padding: 15px; border: 2px solid #d1c7ac; background: #fff; font-family: inherit; font-size: 1.1rem; text-align: center; box-sizing: border-box; outline: none; }
+        .intro-box { font-size: 0.9rem; color: #555; background: #fdfaf4; padding: 20px; border: 1px dashed #d1c7ac; margin-bottom: 30px; }
+        input { width: 100%; padding: 15px; border: 2px solid #d1c7ac; background: #fff; font-family: inherit; font-size: 1.1rem; text-align: center; box-sizing: border-box; outline: none; transition: border 0.3s; }
+        input:focus { border-color: var(--accent); }
         .btn-box { display: flex; gap: 10px; justify-content: center; margin-top: 15px; }
-        button { background: var(--primary); color: white; padding: 12px 25px; border: none; cursor: pointer; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; }
+        button { background: var(--primary); color: white; padding: 12px 25px; border: none; cursor: pointer; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; transition: opacity 0.2s; }
+        button:hover { opacity: 0.9; }
         
-        #auditResult { display: none; margin-top: 35px; border-top: 3px solid var(--accent); padding-top: 25px; }
+        #auditResult { display: none; margin-top: 35px; border-top: 3px solid var(--accent); padding-top: 25px; animation: fadeIn 0.5s ease; }
         .section { margin-bottom: 25px; border-bottom: 1px solid #f0f0f0; padding-bottom: 10px; }
         .label { font-weight: bold; color: var(--accent); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px; display: block; }
         .text { font-size: 1.1rem; display: block; margin-top: 5px; text-align: justify; }
         .arabic-float { font-size: 3rem; float: right; margin-left: 20px; color: var(--primary); line-height: 1; }
         .legacy-highlight { background: #fdfaf4; border: 1px solid #d1c7ac; padding: 20px; margin-top: 20px; border-left: 5px solid var(--accent); }
         
-        @media print { .input-group, .btn-box, input { display: none !important; } #auditResult { display: block !important; } }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        @media print { .btn-box, input, .intro-box { display: none !important; } #auditResult { display: block !important; border: none; } }
     </style>
 </head>
 <body>
+
 <div class="container">
     <div class="header">
         <h1>The Pen's Script</h1>
-        <p>A Legacy Refactoring Tool</p>
+        <p>Refactoring Identity into Method</p>
     </div>
 
-    <div id="manifesto" class="intro-box">
-        <strong>The Protocol:</strong><br>
-        We are often burdened by "Nouns"—titles like <em>Provider</em>, <em>Husband</em>, or <em>Citizen</em>. These are social labels that can feel heavy or hollow. <br><br>
-        This script refactors those Nouns back into their <strong>Quranic Roots ($R-S-M$)</strong> to reveal their functional <strong>Method</strong>. By changing your identity from a "Noun" to a "Function," you remove the ego and focus on the execution of a wholesome life.
-        <br><br>
-        <em>"The method I leave behind is how to live."</em>
+    <div class="intro-box">
+        <strong>Manual Status:</strong> Enter a noun to begin the refactoring process.
     </div>
 
-    <div class="input-group">
-        <input type="text" id="nounIn" placeholder="Search a Noun (e.g. Son, Trust, Wisdom...)" onkeypress="if(event.key === 'Enter') runAudit()">
-        <div class="btn-box">
-            <button onclick="runAudit()">Execute Refactor</button>
-            <button onclick="window.print()" style="background: var(--accent);">Export to PDF</button>
-        </div>
+    <input type="text" id="nounIn" placeholder="Search (Husband, Son, Provider...)" onkeypress="if(event.key === 'Enter') runAudit()">
+    
+    <div class="btn-box">
+        <button onclick="runAudit()">Execute Refactor</button>
+        <button onclick="window.print()" style="background: var(--accent);">Export PDF</button>
     </div>
 
     <div id="auditResult">
         <div class="section">
-            <span class="label">1. The Noun (The Social Shell)</span>
-            <span class="text" id="rNoun" style="font-weight: bold; font-size: 1.4rem;"></span>
+            <span class="label">1. The Noun</span>
+            <span class="text" id="rNoun" style="font-weight: bold;"></span>
         </div>
+
         <div class="section">
             <span class="arabic-float" id="rArabic"></span>
-            <span class="label">2. The Quranic Root (The Rasm)</span>
+            <span class="label">2. The Quranic Root (Rasm)</span>
             <span class="text" id="rRoot"></span>
         </div>
+
         <div class="section">
-            <span class="label">3. The Logic (The System Operator)</span>
+            <span class="label">3. The Logic (System Operator)</span>
             <span class="text" id="rLogic"></span>
         </div>
+
         <div class="section">
-            <span class="label">4. The Method (The Living Function)</span>
+            <span class="label">4. The Method (Function)</span>
             <span class="text" id="rMethod" style="color: var(--accent); font-weight: bold;"></span>
         </div>
+
         <div class="legacy-highlight">
-            <span class="label">5. The Legacy (The Handover)</span>
+            <span class="label">5. The Legacy (How to Live)</span>
             <span class="text" id="rLegacy"></span>
         </div>
     </div>
 </div>
 
 <script src="data.js"></script>
+
 <script>
     function runAudit() {
         const query = document.getElementById('nounIn').value.toLowerCase().trim();
+        
+        // Check if 'manual' from data.js exists
+        if (typeof manual === 'undefined') {
+            alert("Error: data.js was not found or failed to load. Ensure both files are in the same folder.");
+            return;
+        }
+
         const data = manual[query];
-        const resultDiv = document.getElementById('auditResult');
-        const manifesto = document.getElementById('manifesto');
 
         if (data) {
-            // Hide manifesto to focus on data
-            manifesto.style.display = 'none';
-            
             document.getElementById('rNoun').innerText = query.toUpperCase();
             document.getElementById('rRoot').innerText = data.root;
             
-            // Safe Arabic extraction
+            // Extract Arabic text from the brackets in the root
             const arabicMatch = data.root.match(/\(([^)]+)\)/);
             document.getElementById('rArabic').innerText = arabicMatch ? arabicMatch[1] : "";
             
@@ -95,12 +102,13 @@
             document.getElementById('rMethod').innerText = data.method;
             document.getElementById('rLegacy').innerText = data.legacy;
             
-            resultDiv.style.display = 'block';
-            window.scrollTo({ top: resultDiv.offsetTop - 20, behavior: 'smooth' });
+            document.getElementById('auditResult').style.display = 'block';
+            window.scrollTo({ top: document.getElementById('auditResult').offsetTop - 20, behavior: 'smooth' });
         } else {
-            alert("This noun has not yet been refactored. Try: Husband, Son, Provider, or Time.");
+            alert("Noun not found. Please check your spelling.");
         }
     }
 </script>
+
 </body>
 </html>
