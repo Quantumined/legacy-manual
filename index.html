@@ -32,6 +32,7 @@
     <input type="text" id="nounIn" placeholder="Enter Noun (e.g. Husband, Merchant, Time...)" onkeypress="if(event.key === 'Enter') runAudit()">
     <div class="btn-box">
         <button onclick="runAudit()">Execute Refactor</button>
+        <button onclick="listAll()" style="background: #5d4037;">View All Roots</button>
         <button onclick="window.print()" style="background: var(--accent);">Export PDF</button>
     </div>
     <div id="auditResult">
@@ -74,6 +75,15 @@
             document.getElementById('rLegacy').innerText = data.legacy;
             document.getElementById('auditResult').style.display = 'block';
         } else { alert("Noun not refactored yet."); }
+        function listAll() {
+        const output = document.getElementById('output-box');
+            output.innerHTML = "<h3>System Directory:</h3>";
+        for (let key in manual) {
+        if (key !== "instruction") {
+            output.innerHTML += `<p><strong>${key.toUpperCase()}</strong>: ${manual[key].root}</p>`;
+        }
+    }
+}
     }
 </script>
 </body>
