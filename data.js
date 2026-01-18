@@ -604,6 +604,13 @@ const manual = {
         logic: "To 'Postpone' or 'Delay.' This isn't about lateness; it is the logic of 'Gestation.' It is the capacity to hold a process in a state of development until it is ready for manifestation.",
         method: "The function of 'Nurturing Maturity.'",
         legacy: "Teaching the value of the 'Wait'—showing that the most profound results come from processes that are allowed to mature in a protected, patient environment."
-    }
+    },
+    "man": {
+        root: "R-J-L (ر ج ل)",
+        logic: "To 'Walk' or 'Stand on one's own feet.' In system architecture, this is the Kinetic Mode—the function of mobilizing and moving toward a target.",
+        method: "The function of 'Kinetic Mobilization.'",
+        legacy: "Teaching the power of movement and initiative—leaving a legacy of how to stand firm and move forward with purpose."
+    },
+
 
 };
