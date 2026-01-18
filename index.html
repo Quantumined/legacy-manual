@@ -1,44 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Pen's Script | Legacy Manual</title>
+    <style>
+        :root { --primary: #000; --accent: #b45309; --bg: #fdfcfb; }
+        body { font-family: 'Georgia', serif; background: var(--bg); color: var(--primary); padding: 15px; line-height: 1.6; }
+        .container { max-width: 600px; margin: 0 auto; background: white; border: 1px solid #d1d1d1; padding: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .header { text-align: center; border-bottom: 2px solid #000; margin-bottom: 30px; padding-bottom: 10px; }
+        .header h1 { font-size: 1.2rem; text-transform: uppercase; letter-spacing: 3px; margin: 0; }
+        input { width: 100%; padding: 15px; border: 1px solid #ccc; font-family: inherit; font-size: 1rem; box-sizing: border-box; margin-bottom: 10px; border-radius: 4px; }
+        button { width: 100%; background: var(--primary); color: white; padding: 15px; border: none; cursor: pointer; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; border-radius: 4px; }
+        #auditResult { display: none; margin-top: 30px; }
+        .refactor-section { margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .label { font-weight: bold; color: var(--accent); text-transform: uppercase; font-size: 0.75rem; display: block; }
+        .content { font-size: 1.05rem; display: block; margin-top: 5px; }
+        .arabic { font-size: 1.3rem; float: right; color: #000; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header"><h1>The Pen's Script</h1></div>
+    <input type="text" id="nounIn" placeholder="Search Noun (Husband, Son, Provider...)">
+    <button onclick="runAudit()">Audit Identity</button>
+
+    <div id="auditResult">
+        <div class="refactor-section">
+            <span class="label">The Noun</span>
+            <span class="content" id="rNoun"></span>
+        </div>
+        <div class="refactor-section">
+            <span class="label">The Quranic Root</span>
+            <span id="rArabic" class="arabic"></span>
+            <span class="content" id="rRoot"></span>
+        </div>
+        <div class="refactor-section">
+            <span class="label">The Logic</span>
+            <span class="content" id="rLogic"></span>
+        </div>
+        <div class="refactor-section">
+            <span class="label">The Method</span>
+            <span class="content" id="rMethod"></span>
+        </div>
+        <div class="refactor-section">
+            <span class="label">The Legacy</span>
+            <span class="content" id="rLegacy"></span>
+        </div>
+    </div>
+</div>
+
 <script>
-    const API_KEY = "AIzaSyBbYV7unzd9anXu6HQ0udCqWRCtaNXacz8"; 
+    const manual = {
+        "husband": {
+            root: "Z-W-J",
+            arabic: "ز و ج",
+            logic: "In the Rasm, this is a Logical Operator. A Zawj is a 'Pair' or a 'Counterpart.' In code, this is Symmetry/Parity.",
+            method: "The function isn't 'being a husband'; it is 'Pairing'—balancing another soul.",
+            legacy: "Teaching a Method of Pairing: how to create synergy where 1 + 1 = 3."
+        },
+        "son": {
+            root: "B-N-Y",
+            arabic: "ب ن ي",
+            logic: "The root for 'Building.' An Ibn (Son) is an extension of the structure.",
+            method: "The function is 'Continuing the Build.'",
+            legacy: "Refactoring the 'Source Code' of your parents for the next iteration."
+        },
+        "provider": {
+            root: "R-Z-Q",
+            arabic: "ر ز ق",
+            logic: "You are the 'Route' (Conduit), not the Source.",
+            method: "The function is 'Routing' resources without friction.",
+            legacy: "Leaving behind a method of flow rather than a memory of hoarding."
+        }
+    };
 
-    async function askGemini() {
-        const noun = document.getElementById('nounIn').value;
-        const resultDiv = document.getElementById('auditResult');
-        const loader = document.getElementById('loading');
-        
-        if(!noun) return;
-        loader.style.display = 'block';
-        resultDiv.style.display = 'none';
-
-        const prompt = `Refactor the noun "${noun}" using the Quranic Root method. Format as: THE NOUN, THE QURANIC ROOT, THE LOGIC, THE METHOD, THE LEGACY.`;
-
-        try {
-            // 2026 Standard URL
-            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent`;
-            
-            const response = await fetch(url, {
-                method: 'POST',
-                headers: { 
-                    'Content-Type': 'application/json',
-                    'x-goog-api-key': API_KEY.trim() // THE 2026 SECURITY HEADER
-                },
-                body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
-            });
-
-            const data = await response.json();
-            
-            if (data.error) {
-                // This will show the EXACT reason (e.g., "Region not supported")
-                throw new Error(data.error.message);
-            }
-
-            resultDiv.innerText = data.candidates[0].content.parts[0].text;
-            resultDiv.style.display = 'block';
-        } catch (e) {
-            resultDiv.innerText = "SYSTEM ERROR: " + e.message;
-            resultDiv.style.display = 'block';
-        } finally {
-            loader.style.display = 'none';
+    function runAudit() {
+        const val = document.getElementById('nounIn').value.toLowerCase().trim();
+        const res = manual[val];
+        if (res) {
+            document.getElementById('rNoun').innerText = val.toUpperCase();
+            document.getElementById('rRoot').innerText = res.root;
+            document.getElementById('rArabic').innerText = res.arabic;
+            document.getElementById('rLogic').innerText = res.logic;
+            document.getElementById('rMethod').innerText = res.method;
+            document.getElementById('rLegacy').innerText = res.legacy;
+            document.getElementById('auditResult').style.display = 'block';
+        } else {
+            alert("This noun hasn't been refactored yet. Use 'Husband', 'Son', or 'Provider'.");
         }
     }
 </script>
+</body>
+</html>
