@@ -4,21 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Pen's Script</title>
+    
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#8b4513">
+    
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="apple-touch-icon" href="logo.png">
+    
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f1ea; color: #3e2723; text-align: center; padding: 20px; }
         .app-container { max-width: 600px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .header img { width: 150px; height: auto; margin-bottom: 10px; }
+        .header img { width: 120px; height: auto; margin-bottom: 10px; border-radius: 10px; }
         h1 { margin: 0; color: #8b4513; font-size: 24px; }
         #dedication { margin: 20px 0; padding: 15px; background: rgba(139, 69, 19, 0.05); border-left: 4px solid #8b4513; text-align: left; font-size: 14px; line-height: 1.5; border-radius: 5px; }
         .search-box { margin: 20px 0; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
-        input { padding: 12px; border: 2px solid #d7ccc8; border-radius: 8px; width: 70%; outline: none; }
-        button { padding: 12px 20px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; transition: 0.3s; }
+        input { padding: 12px; border: 2px solid #d7ccc8; border-radius: 8px; width: 70%; outline: none; font-size: 16px; }
+        button { padding: 12px 20px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; transition: 0.3s; font-size: 14px; }
         .btn-search { background-color: #8b4513; color: white; }
         .btn-view { background-color: #5d4037; color: white; }
-        button:hover { opacity: 0.9; transform: translateY(-2px); }
-        #output-box { margin-top: 20px; padding: 20px; border-radius: 10px; min-height: 100px; text-align: left; border: 1px dashed #d7ccc8; transition: all 0.5s; }
+        button:hover { opacity: 0.9; }
+        #output-box { margin-top: 20px; padding: 20px; border-radius: 10px; min-height: 100px; text-align: left; border: 1px dashed #d7ccc8; }
         .root-highlight { color: #8b4513; font-weight: bold; font-size: 1.2em; }
     </style>
 </head>
@@ -26,18 +31,19 @@
 
 <div class="app-container">
     <div class="header">
-        <img src="logo.png" alt="The Pen's Script Logo">
+        <img src="logo.png" alt="Logo">
         <h1>The Pen's Script</h1>
-        <p>Legacy Manual: Refactoring Identity into Method</p>
+        <p>Legacy Manual: Universal Logic</p>
     </div>
 
     <div id="dedication">
-        <strong>System Briefing:</strong> This is a calibration tool for the human experience. It refactors common social nouns into their original functional logic. 
-        <em>"Use this script to strip away the noise of ego and return to the Root."</em>
+        <strong>System Briefing:</strong> This is a calibration tool for the human experience. 
+        It refactors common social nouns into their original functional logic. 
+        <em>"Return to the Root ($A-Ṣ-L$)."</em>
     </div>
 
     <div class="search-box">
-        <input type="text" id="nounInput" placeholder="Search a noun (e.g., Provider)...">
+        <input type="text" id="nounInput" placeholder="Search (e.g. Leader)...">
         <button class="btn-search" onclick="searchNoun()">Search</button>
         <button class="btn-view" onclick="listAll()">View All Roots</button>
     </div>
@@ -48,27 +54,41 @@
 </div>
 
 <script src="data.js"></script>
+
 <script>
+    // 1. SEARCH FUNCTION
     function searchNoun() {
         const query = document.getElementById('nounInput').value.toLowerCase().trim();
         const output = document.getElementById('output-box');
         
+        if (typeof manual === 'undefined') {
+            output.innerHTML = "<p style='color:red;'>Error: data.js not found in folder.</p>";
+            return;
+        }
+
         if (manual[query]) {
             const item = manual[query];
             output.innerHTML = `
-                <h2 style="text-transform: capitalize;">${query}</h2>
+                <h2 style="text-transform: capitalize; margin-top:0;">${query}</h2>
                 <p><span class="root-highlight">Root: ${item.root}</span></p>
                 <p><strong>Logic:</strong> ${item.logic}</p>
                 <p><strong>Method:</strong> ${item.method}</p>
                 <p><strong>Legacy:</strong> ${item.legacy}</p>
             `;
         } else {
-            output.innerHTML = "<p style='color:red;'>Noun not found in the current script. Try 'man', 'woman', or 'provider'.</p>";
+            output.innerHTML = "<p style='color:red;'>Noun not found. Check spelling or try 'View All'.</p>";
         }
     }
 
+    // 2. VIEW ALL FUNCTION
     function listAll() {
         const output = document.getElementById('output-box');
+        
+        if (typeof manual === 'undefined') {
+            output.innerHTML = "<p style='color:red;'>Error: data.js is not loading correctly.</p>";
+            return;
+        }
+
         let htmlContent = "<h3>System Directory:</h3><ul style='list-style:none; padding:0;'>";
         
         for (let key in manual) {
