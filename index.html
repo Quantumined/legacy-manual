@@ -14,14 +14,16 @@
         .input-group { margin-bottom: 30px; text-align: center; }
         input { width: 100%; padding: 12px; border: none; border-bottom: 2px solid #d1c7ac; background: transparent; font-family: inherit; font-size: 1.1rem; text-align: center; outline: none; }
         .btn-box { display: flex; gap: 10px; justify-content: center; margin-top: 20px; }
-        button { background: var(--primary); color: white; padding: 10px 20px; border: none; cursor: pointer; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; }
-        #auditResult { display: none; margin-top: 40px; border-top: 1px solid #eee; padding-top: 20px; }
-        .refactor-section { margin-bottom: 30px; }
+        button { background: var(--primary); color: white; padding: 10px 20px; border: none; cursor: pointer; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        button:hover { background: var(--accent); }
+        #auditResult { display: none; margin-top: 40px; border-top: 1px solid #eee; padding-top: 20px; animation: fadeIn 0.5s ease-in; }
+        .refactor-section { margin-bottom: 30px; position: relative; }
         .label { font-weight: bold; color: var(--accent); text-transform: uppercase; font-size: 0.7rem; letter-spacing: 1px; display: block; margin-bottom: 8px; }
         .content { font-size: 1.05rem; display: block; padding-left: 10px; border-left: 1px solid #eee; }
-        .arabic { font-size: 2.2rem; float: right; color: var(--primary); font-family: "Times New Roman", serif; margin-top: -15px; }
+        .arabic { font-size: 2.2rem; float: right; color: var(--primary); font-family: serif; margin-top: -10px; }
         .legacy-box { background: #fdfaf4; padding: 15px; border: 1px solid #eee; font-style: italic; border-radius: 5px; margin-top: 10px; }
-        @media print { .input-group, .btn-box, .intro-box { display: none !important; } #auditResult { display: block !important; } }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @media print { .input-group, .btn-box, .intro-box, .header p { display: none !important; } .container { box-shadow: none; border: none; width: 100%; max-width: 100%; } #auditResult { display: block !important; } }
     </style>
 </head>
 <body>
@@ -32,20 +34,20 @@
     </div>
 
     <div class="intro-box">
-        <p>Society gives us <strong>Nouns</strong>—labels. This manual refactors them into <strong>Methods</strong> using the <strong>Rasm (Root Logic)</strong> of the Quran.</p>
+        <p>Refactoring 100 social identities into functional <strong>Methods</strong> using <strong>Quranic Rasm (Root Logic)</strong>. Search any role to reveal the wholesome code behind it.</p>
     </div>
     
     <div class="input-group">
-        <input type="text" id="nounIn" placeholder="Search (e.g. Husband, Provider, Fasting)" onkeypress="if(event.key === 'Enter') runAudit()">
+        <input type="text" id="nounIn" placeholder="Search (e.g. Provider, Neighbor, Debtor...)" onkeypress="if(event.key === 'Enter') runAudit()">
         <div class="btn-box">
             <button onclick="runAudit()">Refactor Noun</button>
-            <button onclick="window.print()" style="background: var(--accent);">Export PDF</button>
+            <button onclick="window.print()" style="background: var(--accent);">Export to PDF</button>
         </div>
     </div>
 
     <div id="auditResult">
         <div class="refactor-section">
-            <span class="label">The Noun</span>
+            <span class="label">The Noun (Social Title)</span>
             <span class="content" id="rNoun" style="font-weight: bold; font-size: 1.2rem;"></span>
         </div>
         <div class="refactor-section">
@@ -54,15 +56,15 @@
             <span class="content" id="rRoot"></span>
         </div>
         <div class="refactor-section">
-            <span class="label">The Logic</span>
+            <span class="label">The Logic (System Purpose)</span>
             <span class="content" id="rLogic"></span>
         </div>
         <div class="refactor-section">
-            <span class="label">The Method</span>
+            <span class="label">The Method (Function)</span>
             <span class="content" id="rMethod"></span>
         </div>
         <div class="refactor-section">
-            <span class="label">The Legacy</span>
+            <span class="label">The Legacy (How to Live)</span>
             <div class="legacy-box" id="rLegacy"></div>
         </div>
     </div>
@@ -70,42 +72,62 @@
 
 <script>
     const manual = {
-        "husband": { root: "Z-W-J", arabic: "ز و ج", logic: "Logical Operator: Pairing/Symmetry.", method: "The function of 'Pairing'.", legacy: "Teaching synergy where 1 + 1 = 3." },
-        "son": { root: "B-N-Y", arabic: "ب ن ي", logic: "The root for 'Building.'", method: "Continuing the Build.", legacy: "Refactoring the parent's source code." },
-        "provider": { root: "R-Z-Q", arabic: "ر ز ق", logic: "The Router/Conduit, not the Source.", method: "Routing resources.", legacy: "Resource management—ensuring flow reaches the family." },
-        "fasting": { root: "S-W-M", arabic: "ص و م", logic: "System Pause/Stillness.", method: "System Reset.", legacy: "Stilling the noise to hear the Signal." },
-        "patience": { root: "S-B-R", arabic: "ص ب ر", logic: "To 'Bind' or 'Restrain.'", method: "Pressure management.", legacy: "Teaching how to hold firm while the system processes." },
-        "wealth": { root: "M-W-L", arabic: "م و ل", logic: "Inclination/Tilt.", method: "Balancing the tilt.", legacy: "Teaching that wealth is a tool for tilting toward good." },
-        "debtor": { root: "D-Y-N", arabic: "د ي ن", logic: "A flow that hasn't returned yet.", method: "Balancing the Ledger.", legacy: "Every interaction must be made whole." },
-        "truth": { root: "H-Q-Q", arabic: "ح ق ق", logic: "The Fixed Point.", method: "Calibration.", legacy: "Fairness in every transaction." },
-        "neighbor": { root: "J-W-R", arabic: "ج و ر", logic: "Sanctuary/Protect.", method: "Sanctuary-Building.", legacy: "Turning a house into a fortress." },
-        "teacher": { root: "C-L-M", arabic: "ع ل م", logic: "Sign-poster.", method: "Marking the path.", legacy: "Leaving a map, not a lecture." },
-        "wisdom": { root: "H-K-M", arabic: "ح ك م", logic: "The Bridle/Restraint.", method: "Governing.", legacy: "Teaching how to control power." },
-        "peace": { root: "S-L-M", arabic: "س ل م", logic: "Wholeness/Soundness.", method: "Integration.", legacy: "A system complete and at rest." },
-        // ... (The search will check all 100 lowercase keys)
-    };
-
-    // To ensure the app works, let's auto-fill the 100 nouns into the search memory
-    function runAudit() {
-        const input = document.getElementById('nounIn');
-        const query = input.value.toLowerCase().trim();
-        const resultDiv = document.getElementById('auditResult');
-        const data = manual[query];
-
-        if (data) {
-            document.getElementById('rNoun').innerText = query.toUpperCase();
-            document.getElementById('rRoot').innerText = data.root;
-            document.getElementById('rArabic').innerText = data.arabic;
-            document.getElementById('rLogic').innerText = data.logic;
-            document.getElementById('rMethod').innerText = data.method;
-            document.getElementById('rLegacy').innerText = data.legacy;
-            
-            resultDiv.style.display = 'block';
-            resultDiv.scrollIntoView({ behavior: 'smooth' });
-        } else {
-            alert("Noun not recognized. Try: husband, provider, fasting, or patience.");
-        }
-    }
-</script>
-</body>
-</html>
+        "husband": { root: "Z-W-J", arabic: "ز و ج", logic: "Logical Operator: Pairing/Symmetry.", method: "The function of 'Pairing' and balancing another soul.", legacy: "Teaching synergy where 1 + 1 = 3." },
+        "son": { root: "B-N-Y", arabic: "ب ن ي", logic: "The root for 'Building.' Extension of structure.", method: "Continuing the Build.", legacy: "Refactoring the parent's source code for the next iteration." },
+        "provider": { root: "R-Z-Q", arabic: "ر ز ق", logic: "The Router/Conduit, not the Source.", method: "Routing resources without friction.", legacy: "Resource management—ensuring flow reaches the family." },
+        "father": { root: "A-B-W", arabic: "أ ب و", logic: "Nourisher of Soil. Preparing the ground for the seed.", method: "The function of 'Cultivating.'", legacy: "Leaving behind a pH-balanced environment for growth." },
+        "mother": { root: "U-M-M", arabic: "أ م م", logic: "The 'Source' or 'Prototype.'", method: "The function of 'Founding'.", legacy: "Teaching the core values that serve as the system's BIOS." },
+        "leader": { root: "A-M-M", arabic: "أ م م", logic: "The 'Front' or 'Direction.'", method: "The function of 'Orientation'.", legacy: "Teaching others how to find 'True North' independently." },
+        "neighbor": { root: "J-W-R", arabic: "ج و ر", logic: "To 'Sanctuary' or 'Protect.'", method: "The function of 'Sanctuary-Building.'", legacy: "Turning a house into a spiritual fortress." },
+        "friend": { root: "S-D-Q", arabic: "ص د ق", logic: "Truth-Validator.", method: "The function of 'Verification.'", legacy: "Being a mirror that reflects the truest version of another." },
+        "teacher": { root: "ʿ-L-M", arabic: "ع ل م", logic: "Root for 'Sign' or 'Flag.'", method: "The function of 'Marking the Path.'", legacy: "Leaving a map behind rather than just a lecture." },
+        "student": { root: "T-L-B", arabic: "ط ل ب", logic: "The active search for missing data.", method: "The function of 'Seeking.'", legacy: "A legacy of curiosity—wisdom is never fully possessed." },
+        "servant": { root: "ʿ-B-D", arabic: "ع ب د", logic: "To smooth a path. Removing obstacles.", method: "The function of 'Facilitating.'", legacy: "Greatness is found in making the way easier for others." },
+        "steward": { root: "W-K-L", arabic: "و ك ل", logic: "Managing property belonging to the Source.", method: "The function of 'Custodianship.'", legacy: "We own nothing, but are responsible for everything." },
+        "traveler": { root: "S-F-R", arabic: "س ف ر", logic: "To 'Unveil.' Stripping away the surface self.", method: "The function of 'Discovery.'", legacy: "Teaching that movement reveals the truth of the self." },
+        "worker": { root: "ʿ-M-L", arabic: "ع م ل", logic: "Kinetic Energy. Turning intent into reality.", method: "The function of 'Actualization.'", legacy: "Value is created by movement, not status." },
+        "truth": { root: "Ḥ-Q-Q", arabic: "ح ق ق", logic: "The Fixed Point.", method: "The function of 'Calibration.'", legacy: "Leaving a legacy of fairness in every transaction." },
+        "brother": { root: "A-KH-W", arabic: "أ خ و", logic: "Partnership or Adhesion.", method: "The function of 'Reinforcing.'", legacy: "Being a support beam for another's structure." },
+        "sister": { root: "A-KH-W", arabic: "أ خ و", logic: "Feminine partnership and binding.", method: "The function of 'Nurturing Connection.'", legacy: "Protecting the ties that keep the system whole." },
+        "guest": { root: "D-Y-F", arabic: "ض ي ف", logic: "To 'Lean Toward.'", method: "The function of 'Hospitality-Testing.'", legacy: "Teaching how to open the heart to the unknown." },
+        "stranger": { root: "GH-R-B", arabic: "غ ر ب", logic: "The 'Setting Sun.' Far from home.", method: "The function of 'Recognition.'", legacy: "Finding the common Source Code in every soul." },
+        "enemy": { root: "ʿ-D-W", arabic: "ع د و", logic: "To 'Run' or 'Overstep' boundaries.", method: "The function of 'Limit-Testing.'", legacy: "Teaching how to maintain your center when pushed." },
+        "wealth": { root: "M-W-L", arabic: "م و ل", logic: "Inclination. That which tilts the heart.", method: "The function of 'Balancing.'", legacy: "Teaching that wealth is a tool for tilting toward good." },
+        "knowledge": { root: "ʿ-R-F", arabic: "ع ر ف", logic: "Pattern recognition.", method: "The function of 'Pattern Recognition.'", legacy: "Leaving the ability to see truth behind the noise." },
+        "heart": { root: "Q-L-B", arabic: "ق ل ب", logic: "To 'Flip' or 'Turn.'", method: "The function of 'Steering.'", legacy: "Keeping the heart turned toward the Light." },
+        "soul": { root: "N-F-S", arabic: "ن ف س", logic: "To 'Breathe.' Animation of structure.", method: "The function of 'Life-Giving.'", legacy: "Actions should breathe life into the world." },
+        "community": { root: "Q-W-M", arabic: "ق و م", logic: "To 'Stand Together.'", method: "The function of 'Standing.'", legacy: "Building a structure that doesn't collapse." },
+        "justice": { root: "ʿ-D-L", arabic: "ع د ل", logic: "To be 'Level' or 'Equal.'", method: "The function of 'Equating.'", legacy: "Ensuring energy is distributed fairly." },
+        "patience": { root: "S-B-R", arabic: "ص ب ر", logic: "To 'Bind' or 'Restrain.'", method: "The function of 'Withstanding.'", legacy: "Holding firm while the system processes." },
+        "gratitude": { root: "SH-K-R", arabic: "ش ك ر", logic: "To 'Fill' or 'Overflow.'", method: "The function of 'Amplification.'", legacy: "Noticing the good makes the good grow." },
+        "forgiveness": { root: "GH-F-R", arabic: "غ ف ر", logic: "To 'Cover' or 'Protect'.", method: "The function of 'Repairing.'", legacy: "Patching the code rather than deleting the user." },
+        "mercy": { root: "R-Ḥ-M", arabic: "ر ح م", logic: "The 'Womb.' All-encompassing protection.", method: "The function of 'Shielding.'", legacy: "Providing safe space for others to grow." },
+        "wisdom": { root: "Ḥ-K-M", arabic: "ح ك م", logic: "The 'Bridle'. Restraint for direction.", method: "The function of 'Governing.'", legacy: "Teaching how to control power to achieve a goal." },
+        "time": { root: "ʿ-S-R", arabic: "ع ص ر", logic: "To 'Squeeze' value out.", method: "The function of 'Extraction.'", legacy: "Squeezing every drop of meaning from a day." },
+        "trust": { root: "A-M-N", arabic: "أ م ن", logic: "Safety and Security.", method: "The function of 'Securing.'", legacy: "Being a trustworthy node in the network." },
+        "speech": { root: "Q-W-L", arabic: "ق و ل", logic: "Manifestation of thought.", method: "The function of 'Declaration.'", legacy: "Your word is the executable file of your soul." },
+        "deed": { root: "F-ʿ-L", arabic: "ف ع ل", logic: "Immediate action.", method: "The function of 'Execution.'", legacy: "Thoughts mean nothing until acted upon." },
+        "charity": { root: "S-D-Q", arabic: "ص د ق", logic: "Truth-telling through giving.", method: "The function of 'Proof-Giving.'", legacy: "Giving is the highest proof of belief." },
+        "prayer": { root: "S-L-W", arabic: "ص ل و", logic: "Uplink connection.", method: "The function of 'Connecting.'", legacy: "Maintaining the uplink to the Source." },
+        "fasting": { root: "S-W-M", arabic: "ص و م", logic: "To 'Still' or 'Stop.'", method: "The function of 'System Reset.'", legacy: "Stilling the noise to hear the signal." },
+        "peace": { root: "S-L-M", arabic: "س ل م", logic: "Wholeness and Soundness.", method: "The function of 'Integration.'", legacy: "A system complete and at rest." },
+        "fear": { root: "KH-W-F", arabic: "خ و ف", logic: "Alarm system for structure.", method: "The function of 'Alerting.'", legacy: "Using fear as a signal, not a cage." },
+        "hope": { root: "R-J-W", arabic: "ر ج و", logic: "Anticipation of output.", method: "The function of 'Expectation.'", legacy: "The system always moves toward growth." },
+        "love": { root: "Ḥ-B-B", arabic: "ح ب ب", logic: "The 'Seed.' Core potential.", method: "The function of 'Origination.'", legacy: "Starting from a seed of sincere intent." },
+        "guidance": { root: "H-D-Y", arabic: "ه د ي", logic: "Gift of direction.", method: "The function of 'Navigating.'", legacy: "Teaching others to read stars when dark." },
+        "success": { root: "F-L-Ḥ", arabic: "ف ل ح", logic: "To 'Cultivate' or 'Plough'.", method: "The function of 'Reaping.'", legacy: "Natural result of consistent cultivation." },
+        "burden": { root: "W-Z-R", arabic: "و ز ر", logic: "A 'Weight' or 'Support.'", method: "The function of 'Load-Bearing.'", legacy: "How to carry weight without breaking." },
+        "legacy": { root: "W-R-TH", arabic: "و ر ث", logic: "To inherit or leave behind.", method: "The function of 'Handover.'", legacy: "Teaching how to live after you are gone." },
+        "human": { root: "A-N-S", arabic: "أ ن س", logic: "Sociable/Familiar.", method: "The function of 'Relating.'", legacy: "Designed for connection, never alone." },
+        "witness": { root: "SH-H-D", arabic: "ش ه د", logic: "To be present.", method: "The function of 'Observing.'", legacy: "Being present is the first step to truth." },
+        "covenant": { root: "ʿ-H-D", arabic: "ع ه د", logic: "Promise or Contract.", method: "The function of 'Upholding.'", legacy: "Nodes keeping their word allows the work." },
+        "return": { root: "R-J-ʿ", arabic: "ر ج ع", logic: "Loop back to start.", method: "The function of 'Recalling.'", legacy: "Every process returns to the Source." },
+        "debtor": { root: "D-Y-N", arabic: "د ي ن", logic: "Flow that hasn't returned.", method: "The function of 'Balancing the Ledger.'", legacy: "Every interaction must be made whole." },
+        "critic": { root: "N-Q-D", arabic: "ن ق د", logic: "Testing coins for purity.", method: "The function of 'Quality Assurance.'", legacy: "Seeking gold in others, not flaws." },
+        "elder": { root: "SH-Y-KH", arabic: "ش ي خ", logic: "Historical data storage.", method: "The function of 'Archiving.'", legacy: "Protecting history to avoid repetition." },
+        "citizen": { root: "W-T-N", arabic: "و ط ن", logic: "To settle permanently.", method: "The function of 'Stabilizing.'", legacy: "Adding weight and peace to geography." },
+        "rival": { root: "N-F-S", arabic: "ن ف س", logic: "Competing for air.", method: "The function of 'Benchmarking.'", legacy: "Testing efficiency against others." },
+        "outcast": { root: "N-B-DH", arabic: "ن ب ذ", logic: "Casting away old scripts.", method: "The function of 'Independent Processing.'", legacy: "Outside the crowd allows clearer signal." },
+        "mediator": { root: "W-S-T", arabic: "و س ط", logic: "Center of gravity.", method: "The function of 'Harmonizing.'", legacy: "Finding the common variable." },
+        "employer": { root: "K-F-L", arabic: "ك ف ل", logic: "To 'Guarantee' or 'Sponsor.'", method: "The function of 'Underwriting.'", legacy: "Creating safety nets for others." },
+        "employee": { root: "J-R-Y", arabic: "ج ر ي", logic: "To 'run' or 'flow'.", method: "The function of 'Stream-Building.'", legacy
