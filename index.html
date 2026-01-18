@@ -1,32 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Pen's Script | 2026 Edition</title>
-    <style>
-        :root { --primary: #000; --accent: #b45309; --bg: #fdfcfb; }
-        body { font-family: 'Georgia', serif; background: var(--bg); color: var(--primary); padding: 15px; line-height: 1.6; }
-        .container { max-width: 600px; margin: 0 auto; background: white; border: 1px solid #d1d1d1; padding: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        .header { text-align: center; border-bottom: 2px solid #000; margin-bottom: 30px; padding-bottom: 10px; }
-        .header h1 { font-size: 1.2rem; text-transform: uppercase; letter-spacing: 3px; margin: 0; }
-        input { width: 100%; padding: 15px; border: 1px solid #ccc; font-family: inherit; font-size: 1rem; box-sizing: border-box; margin-bottom: 10px; border-radius: 4px; }
-        button { width: 100%; background: var(--primary); color: white; padding: 15px; border: none; cursor: pointer; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; border-radius: 4px; }
-        #loading { display: none; text-align: center; font-style: italic; margin: 20px; color: var(--accent); }
-        #auditResult { display: none; margin-top: 30px; white-space: pre-wrap; background: #f9f9f9; padding: 15px; border-left: 4px solid var(--accent); }
-    </style>
-</head>
-<body>
-<div class="container">
-    <div class="header"><h1>The Pen's Script</h1></div>
-    <input type="text" id="nounIn" placeholder="Enter Noun (e.g., Neighbor, Boss)...">
-    <button onclick="askGemini()">Run Live Audit</button>
-    <div id="loading">Consulting the Source Code...</div>
-    <div id="auditResult"></div>
-</div>
-
 <script>
-    // CAUTION: Ensure your key is between STRAIGHT quotes "", not curly ones.
     const API_KEY = "AIzaSyBbYV7unzd9anXu6HQ0udCqWRCtaNXacz8"; 
 
     async function askGemini() {
@@ -38,40 +10,35 @@
         loader.style.display = 'block';
         resultDiv.style.display = 'none';
 
-        const prompt = `Refactor the noun "${noun}" using the Quranic Root method. 
-        Format as: 
-        THE NOUN: ${noun}
-        THE QURANIC ROOT: [Root/Arabic]
-        THE LOGIC: [Logical operator explanation]
-        THE METHOD: [The function/action]
-        THE LEGACY: [The 'how to live' lesson]`;
+        const prompt = `Refactor the noun "${noun}" using the Quranic Root method. Format as: THE NOUN, THE QURANIC ROOT, THE LOGIC, THE METHOD, THE LEGACY.`;
 
         try {
-            // Updated to Gemini 3 Flash for 2026 stability
-            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${API_KEY}`;
+            // 2026 Standard URL
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent`;
             
             const response = await fetch(url, {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'x-goog-api-key': API_KEY.trim() // THE 2026 SECURITY HEADER
+                },
                 body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
             });
 
             const data = await response.json();
             
             if (data.error) {
+                // This will show the EXACT reason (e.g., "Region not supported")
                 throw new Error(data.error.message);
             }
 
-            const text = data.candidates[0].content.parts[0].text;
-            resultDiv.innerText = text;
+            resultDiv.innerText = data.candidates[0].content.parts[0].text;
             resultDiv.style.display = 'block';
         } catch (e) {
-            resultDiv.innerText = "SYSTEM ERROR: " + e.message + "\n\nTip: Check for extra spaces in your API key or 'curly' quotes.";
+            resultDiv.innerText = "SYSTEM ERROR: " + e.message;
             resultDiv.style.display = 'block';
         } finally {
             loader.style.display = 'none';
         }
     }
 </script>
-</body>
-</html>
