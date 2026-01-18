@@ -48,19 +48,17 @@
 
         /* PRINT STYLING - Hides the interface for a clean document */
         #print-header { display: none; text-align: left; border-bottom: 2px solid #8b4513; margin-bottom: 20px; padding-bottom: 10px; }
+        /* ADDITION: Logo for printed header */
+        #print-header img { width: 80px; height: auto; margin-bottom: 10px; display: block; }
 
         @media print {
+            /* ADDITION: Force colors and images on Android */
+            * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
             body { background: white !important; padding: 0; }
             .modal-overlay, .search-box, .btn-action, .header img { display: none !important; }
             .app-container { box-shadow: none !important; border: none !important; max-width: 100% !important; margin: 0 !important; }
             #output-box { border: none !important; background: white !important; padding: 0 !important; }
             #print-header { display: block !important; }
-            <div id="print-header">
-            <img src="logo.png" style="width: 80px; height: auto; display: block; margin-bottom: 10px;">
-            <h1>THE PEN'S SCRIPT</h1>
-            <p><strong>Initialization:</strong> Refactoring identity into functional logic.</p>
-    </div>
-
             h1 { color: #8b4513 !important; }
         }
     </style>
@@ -141,6 +139,7 @@
 
 <div class="app-container">
     <div id="print-header">
+        <img src="logo.png" alt="Seal">
         <h1>THE PEN'S SCRIPT</h1>
         <p><strong>Initialization:</strong> Refactoring identity into functional logic.</p>
     </div>
