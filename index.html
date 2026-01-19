@@ -19,6 +19,28 @@
             padding: 30px; 
             border-radius: 15px; 
             box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+            position: relative; 
+            overflow: hidden; 
+            z-index: 1;
+            min-height: 80vh; 
+        }
+
+        /* WATERMARK: Fits to page */
+        .app-container::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 95%; 
+            height: 95%; 
+            background-image: url('logo.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain; 
+            opacity: 0.05; 
+            z-index: -1; 
+            pointer-events: none;
         }
 
         .header img { width: 100px; height: auto; margin-bottom: 10px; border-radius: 12px; }
@@ -45,34 +67,23 @@
         }
 
         /* SEARCH INTERFACE STYLES */
-        .search-box { margin: 20px 0; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+        .search-box { margin: 20px 0; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; z-index: 2; position: relative; }
         input { padding: 12px; border: 2px solid #d7ccc8; border-radius: 8px; width: 70%; font-size: 16px; outline: none; }
         .btn-action { padding: 12px 20px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; color: white; }
         .btn-search { background-color: #8b4513; }
         .btn-view { background-color: #5d4037; }
         .btn-print { background-color: #4e342e; }
 
-        #output-box { margin-top: 20px; padding: 20px; border-radius: 10px; min-height: 100px; text-align: left; border: 1px dashed #d7ccc8; }
+        #output-box { margin-top: 20px; padding: 20px; border-radius: 10px; min-height: 100px; text-align: left; border: 1px dashed #d7ccc8; background: rgba(255, 255, 255, 0.7); z-index: 2; position: relative; }
         .root-highlight { color: #8b4513; font-weight: bold; font-size: 1.2em; }
 
-        /* PRINT STYLING - MAXIMUM WATERMARK FIT */
+        /* PRINT STYLING - SINGLE PAGE FIX */
         #print-header { display: none; text-align: left; border-bottom: 2px solid #8b4513; margin-bottom: 20px; padding-bottom: 10px; }
-        #print-header img { width: 80px; height: auto; margin-bottom: 10px; display: block; }
+        #print-header img { width: 60px; height: auto; margin-bottom: 10px; display: block; }
 
         @media print {
-            @page { margin: 0; size: auto; }
             * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-            
-            body { 
-                background-color: white !important; 
-                background-image: linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)), url('logo.png') !important;
-                background-repeat: no-repeat !important;
-                background-position: center center !important;
-                background-size: contain !important;
-                padding: 0 !important; 
-                margin: 0 !important; 
-            }
-            
+            body { background: white !important; padding: 0 !important; margin: 0 !important; }
             .modal-overlay, .search-box, .btn-action, .header img { display: none !important; }
             
             .app-container { 
@@ -80,18 +91,22 @@
                 border: none !important; 
                 max-width: 100% !important; 
                 margin: 0 !important; 
-                padding: 60px !important;
-                background: transparent !important;
-                position: relative;
+                min-height: 100vh !important; 
+                height: 100vh !important; 
+                padding: 30px !important;
             }
-
-            #output-box, #print-header { 
-                position: relative; 
-                z-index: 10; 
-                background: transparent !important;
+            
+            /* Watermark: Fit to page without overflow */
+            .app-container::before { 
+                opacity: 0.04 !important; 
+                width: 90% !important; 
+                height: 90% !important; 
+                background-size: contain !important;
+                top: 50% !important;
+                left: 50% !important;
             }
-
-            #output-box { border: none !important; padding: 0 !important; }
+            
+            #output-box { border: none !important; background: transparent !important; padding: 0 !important; }
             #print-header { display: block !important; }
             h1 { color: #8b4513 !important; }
         }
@@ -106,6 +121,51 @@
         function searchNoun() {
             var query = document.getElementById('nounInput').value.toLowerCase().trim();
             var output = document.getElementById('output-box');
+
+            const noiseMap = {
+                "husband": "husband", "spouse": "husband", "partner": "husband", "marriage": "husband",
+                "son": "son", "child": "son", "boy": "son", "offspring": "son", "inheritance": "son",
+                "provider": "provider", "worker": "provider", "breadwinner": "provider", "money": "provider", "finances": "provider",
+                "stranger": "stranger", "unknown": "stranger", "outsider": "stranger", "foreigner": "stranger", "hidden": "stranger",
+                "guest": "guest", "visitor": "guest", "client": "guest", "host": "guest", "hospitality": "guest",
+                "enemy": "enemy", "hater": "enemy", "opponent": "enemy", "rival": "enemy", "attacker": "enemy",
+                "father": "father", "dad": "father", "parent": "father", "ancestor": "father",
+                "mother": "mother", "mom": "mother", "origin": "mother", "womb": "mother",
+                "teacher": "teacher", "mentor": "teacher", "professor": "teacher", "guide": "teacher",
+                "student": "student", "learner": "student", "apprentice": "student", "disciple": "student",
+                "guardian": "guardian", "protector": "guardian", "security": "guardian", "police": "guardian",
+                "counselor": "counselor", "helper": "counselor", "ally": "counselor", "witness": "counselor",
+                "consultant": "consultant", "advisor": "consultant", "expert": "consultant",
+                "friend": "friend", "companion": "friend", "bestie": "friend", "mirror": "friend",
+                "leader": "leader", "boss": "leader", "manager": "leader", "captain": "leader",
+                "brother": "brother", "sibling": "brother", "kin": "brother", "support": "brother",
+                "heart": "heart", "emotions": "heart", "feelings": "heart", "anxiety": "heart", "sadness": "heart",
+                "stress": "heart", "pressure": "heart", "overwhelmed": "heart", "burnout": "heart",
+                "intellect": "intellect", "mind": "intellect", "brain": "intellect", "thought": "intellect", "confusion": "intellect",
+                "wisdom": "wisdom", "judgment": "wisdom", "insight": "wisdom", "discretion": "wisdom",
+                "patience": "patience", "waiting": "patience", "anger": "patience", "frustration": "patience", "calm": "patience",
+                "striving": "striving", "effort": "striving", "work": "striving", "labor": "striving", "hustle": "striving",
+                "tongue": "tongue", "speech": "tongue", "words": "tongue", "gossip": "tongue", "truth": "tongue",
+                "eye": "eye", "vision": "eye", "sight": "eye", "perception": "eye", "watching": "eye",
+                "ear": "ear", "hearing": "ear", "listening": "ear", "sound": "ear", "noise": "ear",
+                "hand": "hand", "power": "hand", "action": "hand", "reach": "hand", "doing": "hand",
+                "foot": "foot", "travel": "foot", "path": "foot", "movement": "foot", "steps": "foot",
+                "failure": "loser", "broke": "provider", "poor": "provider", "debt": "provider",
+                "loser": "loser", "inefficient": "loser", "waste": "loser", "regret": "loser",
+                "liar": "liar", "fake": "liar", "deception": "liar", "betrayal": "liar",
+                "oppressor": "oppressor", "bully": "oppressor", "unfair": "oppressor", "tyrant": "oppressor",
+                "success": "cleaving", "winner": "cleaving", "victory": "cleaving", "breakthrough": "cleaving",
+                "death": "return", "end": "return", "dying": "return", "closing": "return",
+                "slave": "slave", "utility": "slave", "servant": "slave", "devotion": "slave",
+                "earth": "earth", "ground": "earth", "nature": "earth", "humility": "earth", "low": "earth",
+                "sky": "sky", "high": "sky", "vision": "sky", "limitless": "sky", "elevation": "sky"
+            };
+
+            // Apply Bridge: Redirect synonym to key word
+            if (noiseMap[query]) {
+                query = noiseMap[query];
+            }
+            
             if (typeof manual === 'undefined') { output.innerHTML = "Error: data.js missing."; return; }
             
             if (manual[query]) {
