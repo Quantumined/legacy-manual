@@ -24,11 +24,15 @@
             min-height: 80vh; 
         }
 
-        /* WATERMARK FIX: Centered precisely by pinning to all edges */
+        /* WATERMARK FIX: Pinned to the center of the screen, not the bottom of the text */
         .app-container::before {
             content: "";
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
+            position: fixed; /* Changed from absolute to fixed */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%; 
+            height: 80%; 
             background-image: url('logo.png');
             background-repeat: no-repeat;
             background-position: center;
@@ -91,14 +95,16 @@
                 padding: 30px !important;
             }
             
-            /* Watermark: Fit to page without overflow */
+            /* Print Watermark Fix */
             .app-container::before { 
+                position: fixed; /* Keep it centered on the paper */
                 opacity: 0.04 !important; 
-                width: 90% !important; 
-                height: 90% !important; 
+                width: 70% !important; 
+                height: 70% !important; 
                 background-size: contain !important;
                 top: 50% !important;
                 left: 50% !important;
+                transform: translate(-50%, -50%) !important;
             }
             
             #output-box { border: none !important; background: transparent !important; padding: 0 !important; }
@@ -156,7 +162,6 @@
                 "sky": "sky", "high": "sky", "vision": "sky", "limitless": "sky", "elevation": "sky"
             };
 
-            // Apply Bridge: Redirect synonym to key word
             if (noiseMap[query]) {
                 query = noiseMap[query];
             }
