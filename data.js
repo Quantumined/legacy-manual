@@ -685,6 +685,31 @@ const manual = {
         "logic": "The function of 'Apprenticeship.'",
         "method": "The state of being 'hewn' or 'shaped.' Accepting the 'Marking' of the Teacher to refine the internal logic and remove processing gaps.",
         "legacy": "A perfected tool that has been verified and is now ready to become a 'Builder' (B-N-Y)."
+    },
+        // --- THE SOCIAL ARCHITECTURE (Security & Alliance) ---
+    "guardian": {
+        "root": "Ḥ-F-Ẓ (ح ف ظ)",
+        "logic": "The function of 'Data Security.'",
+        "method": "Actively monitoring the perimeter to ensure no corrupting variables enter the workspace of the vulnerable. You are the 'Firewall'.",
+        "legacy": "A safe zone where the weak could grow into their full potential without being exploited."
+    },
+    "counselor": {
+        "root": "W-L-Y (و ل ي)",
+        "logic": "The function of 'Proximity Support.'",
+        "method": "Being the 'Closest Ally' who provides the logic-check and emotional buffer. You are the 'Next-of-Kin' in purpose.",
+        "legacy": "A bond of 'Wilayah' that made the impossible achievable through unified script execution."
+    },
+    "consultant": {
+        "root": "Sh-W-R (ش و ر)",
+        "logic": "The function of 'Peer Review.'",
+        "method": "The process of 'Extracting Honey' (Shura). Bringing multiple scripts together to find the sweetest and most logical path forward.",
+        "legacy": "A history of decisions that were superior because they were cross-referenced and collective."
+    },
+    "friend": {
+        "root": "Ṣ-D-Q (ص د ق)",
+        "logic": "The function of 'Truth-Validation.'",
+        "method": "A peer who mirrors the 'Truth' (Sidq) back to you. They are the external verification of your internal calibration.",
+        "legacy": "A relationship that ensured the system never drifted into delusion by providing a constant mirror of reality."
     }
 };
 
