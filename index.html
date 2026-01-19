@@ -141,42 +141,90 @@
             var output = document.getElementById('output-box');
 
             const noiseMap = {
+                // Core Refactors
                 "husband": "husband", "spouse": "husband", "partner": "husband", "marriage": "husband",
                 "son": "son", "child": "son", "boy": "son", "offspring": "son", "inheritance": "son",
                 "provider": "provider", "worker": "provider", "breadwinner": "provider", "money": "provider", "finances": "provider",
-                "stranger": "stranger", "unknown": "stranger", "outsider": "stranger", "foreigner": "stranger", "hidden": "stranger",
-                "guest": "guest", "visitor": "guest", "client": "guest", "host": "guest", "hospitality": "guest",
-                "enemy": "enemy", "hater": "enemy", "opponent": "enemy", "rival": "enemy", "attacker": "enemy",
-                "father": "father", "dad": "father", "parent": "father", "ancestor": "father",
-                "mother": "mother", "mom": "mother", "origin": "mother", "womb": "mother",
-                "teacher": "teacher", "mentor": "teacher", "professor": "teacher", "guide": "teacher",
-                "student": "student", "learner": "student", "apprentice": "student", "disciple": "student",
-                "guardian": "guardian", "protector": "guardian", "security": "guardian", "police": "guardian",
-                "counselor": "counselor", "helper": "counselor", "ally": "counselor", "witness": "counselor",
-                "consultant": "consultant", "advisor": "consultant", "expert": "consultant",
-                "friend": "friend", "companion": "friend", "bestie": "friend", "mirror": "friend",
-                "leader": "leader", "boss": "leader", "manager": "leader", "captain": "leader",
-                "brother": "brother", "sibling": "brother", "kin": "brother", "support": "brother",
-                "heart": "heart", "emotions": "heart", "feelings": "heart", "anxiety": "heart", "sadness": "heart",
-                "stress": "heart", "pressure": "heart", "overwhelmed": "heart", "burnout": "heart",
+                "sibling": "sibling", "brother": "sibling", "sister": "sibling", "kin": "sibling", "support": "sibling",
+                
+                                // THE ARCHITECTURE OF ORIGIN
+                "origin": "origin", "ancestor": "origin", "root": "origin",
+                "mother": "the_matrix", "mom": "the_matrix", "womb": "the_matrix",
+                "father": "the_steward", "dad": "the_steward", "parent": "the_steward",
+                
+                // The Encounter ($N-Z-L$)
+                "encounter": "encounter", "stranger": "encounter", "guest": "encounter", "visitor": "encounter", "enemy": "encounter", "rival": "encounter", "host": "encounter", "hospitality": "encounter", "opponent": "encounter",
+                
+                // The Sensor ($B-S-R$)
+                "sensor": "sensor", "eye": "sensor", "ear": "sensor", "tongue": "sensor", "vision": "sensor", "hearing": "sensor", "speech": "sensor", "sight": "sensor", "listening": "sensor", "perception": "sensor",
+                
+                // The Agency ($Y-D$)
+                "agency": "agency", "hand": "agency", "foot": "agency", "power": "agency", "action": "agency", "travel": "agency", "reach": "agency", "steps": "agency", "path": "agency",
+                
+                // The Calibration ($Q-S-T$)
+                "calibration": "calibration", "success": "calibration", "failure": "calibration", "winner": "calibration", "loser": "calibration", "regret": "calibration", "victory": "calibration", "breakthrough": "calibration",
+                
+                // Vertical Refactors
+                "guide": "guide", "teacher": "guide", "mentor": "guide", "professor": "guide", "coach": "guide",
+                "imam": "imam", "leader": "imam", "boss": "imam", "manager": "imam", "captain": "imam",
+
+                // Internal States
+                "heart": "heart", "emotions": "heart", "feelings": "heart", "anxiety": "heart", "sadness": "heart", "stress": "heart", "pressure": "heart", "overwhelmed": "heart", "burnout": "heart",
                 "intellect": "intellect", "mind": "intellect", "brain": "intellect", "thought": "intellect", "confusion": "intellect",
                 "wisdom": "wisdom", "judgment": "wisdom", "insight": "wisdom", "discretion": "wisdom",
                 "patience": "patience", "waiting": "patience", "anger": "patience", "frustration": "patience", "calm": "patience",
                 "striving": "striving", "effort": "striving", "work": "striving", "labor": "striving", "hustle": "striving",
-                "tongue": "tongue", "speech": "tongue", "words": "tongue", "gossip": "tongue", "truth": "tongue",
-                "eye": "eye", "vision": "eye", "sight": "eye", "perception": "eye", "watching": "eye",
-                "ear": "ear", "hearing": "ear", "listening": "ear", "sound": "ear", "noise": "ear",
-                "hand": "hand", "power": "hand", "action": "hand", "reach": "hand", "doing": "hand",
-                "foot": "foot", "travel": "foot", "path": "foot", "movement": "foot", "steps": "foot",
-                "failure": "loser", "broke": "provider", "poor": "provider", "debt": "provider",
-                "loser": "loser", "inefficient": "loser", "waste": "loser", "regret": "loser",
-                "liar": "liar", "fake": "liar", "deception": "liar", "betrayal": "liar",
-                "oppressor": "oppressor", "bully": "oppressor", "unfair": "oppressor", "tyrant": "oppressor",
-                "success": "cleaving", "winner": "cleaving", "victory": "cleaving", "breakthrough": "cleaving",
-                "death": "return", "end": "return", "dying": "return", "closing": "return",
+
+                // Reality Logic
+                "return": "return", "death": "return", "end": "return", "dying": "return", "closing": "return",
                 "slave": "slave", "utility": "slave", "servant": "slave", "devotion": "slave",
                 "earth": "earth", "ground": "earth", "nature": "earth", "humility": "earth", "low": "earth",
-                "sky": "sky", "high": "sky", "limitless": "sky", "elevation": "sky"
+                "sky": "sky", "high": "sky", "vision": "sky", "limitless": "sky", "elevation": "sky",
+                "time": "investment", "urgent": "investment", "iron": "strength", "discipline": "strength",
+"bee": "skill", "craft": "skill", "spider": "fragility", "weak": "fragility",
+"star": "navigation", "light": "illumination", "water": "nourishment", "growth": "nourishment",
+"trial": "trial", "test": "trial", "pressure": "trial", "people": "community", "social": "community",
+"truth": "authenticity", "real": "authenticity", 
+                "liar": "liar", "fake": "liar", "deception": "liar", "betrayal": "liar",
+                "oppressor": "oppressor", "tyrant": "oppressor", "bully": "oppressor", "unfair": "oppressor", "dictator": "oppressor",
+                "sleep": "rest", "rest": "rest", "wake": "vigilance", "alert": "vigilance",
+"hunger": "vulnerability", "poor": "vulnerability", "speech": "expression", "words": "expression",
+"silence": "stillness", "quiet": "stillness", "growth": "ascent", "climb": "ascent",
+"struggle": "struggle", "effort": "struggle", "cave": "refuge", "hide": "refuge",
+"ease": "expansion", "peace": "expansion", "stress": "contraction", "tight": "contraction",
+"trade": "commerce", "buy": "commerce", "sell": "commerce", "money": "abundance",
+"debt": "debt", "loan": "debt", "rich": "abundance", "wealth": "abundance",
+"poor": "scarcity", "broke": "scarcity", "house": "property", "land": "property",
+"profit": "investment_logic", "gain": "investment_logic", "useful": "utility", "help": "utility",
+"waste": "waste", "spending": "waste", "build": "foundation", "structure": "foundation",
+"charity": "distribution", "give": "distribution", "tax": "distribution", "court": "justice", "law": "justice", "mercy": "mercy", "kindness": "mercy",
+"forgive": "forgiveness", "sorry": "forgiveness", "war": "confrontation", "fight": "confrontation",
+"peace": "reconciliation", "fix": "reconciliation", "witness": "truth_witness", "evidence": "truth_witness",
+"protect": "defense", "shield": "defense", "meeting": "consultation", "advice": "consultation",
+"power": "authority", "control": "authority", "endure": "patience_conflict", "persevere": "patience_conflict", "think": "intellect", "mind": "intellect", "sure": "certainty", "faith": "certainty",
+"confused": "doubt", "unsure": "doubt", "message": "revelation", "inspire": "revelation",
+"book": "record", "write": "record", "ponder": "curiosity", "question": "curiosity",
+"pen": "the_pen", "tool": "the_pen", "stupid": "ignorance", "chaos": "ignorance",
+"wise": "wisdom", "judge": "wisdom", "forgot": "forgetfulness", "remind": "forgetfulness", "day": "clarity_phase", "morning": "clarity_phase", "night": "recalibration_phase", "dark": "recalibration_phase",
+"sun": "governance_logic", "warmth": "governance_logic", "moon": "reflection_logic", "phases": "reflection_logic",
+"hour": "the_deadline", "end": "the_deadline", "dawn": "transition", "start": "transition",
+"sunset": "closure", "evening": "closure", "season": "seasons", "change": "seasons",
+"forever": "constancy", "permanent": "constancy", "hurry": "urgency_logic", "fast": "urgency_logic", "spirit": "the_driver", "soul": "the_driver", "ghost": "the_driver", "barrier": "the_interface",
+"limit": "the_interface", "angel": "automated_forces", "laws": "automated_forces", "devil": "the_shadow",
+"evil": "the_shadow", "myself": "the_ego", "ego": "the_ego", "sky": "the_elevated_view",
+"high": "the_elevated_view", "remember": "internal_frequency", "meditate": "internal_frequency", "veil": "the_veil",
+"hidden": "the_veil", "spring": "the_witness_points", "output": "the_witness_points", "rebirth": "the_return_pulse",
+"resurrection": "the_return_pulse", "family": "kinship", "relatives": "kinship", "orphan": "the_vulnerable", "alone": "the_vulnerable",
+"marriage": "pairing", "wedding": "pairing", "divorce": "dissolution", "separation": "dissolution",
+"neighbor": "the_neighbor", "nextdoor": "the_neighbor", "traveler": "the_traveler", "tourist": "the_traveler",
+"promise": "mutual_agreement", "contract": "mutual_agreement", "old": "the_elder", "senior": "the_elder",
+"young": "the_youth", "child": "the_youth", "guest": "hospitality", "welcome": "hospitality", "legacy": "succession", "heir": "succession", "heavy": "the_weight", "important": "the_weight",
+"scale": "the_scale", "judge": "the_scale", "heaven": "the_garden", "paradise": "the_garden",
+"hell": "the_fire", "anger": "the_fire", "news": "the_ultimate_news", "reality": "the_ultimate_news",
+"help": "the_intercession", "support": "the_intercession", "finish": "the_completion", "done": "the_completion",
+"god": "the_source", "allah": "the_source", "one": "the_source", "husband": "pairing", "wife": "pairing", "spouse": "pairing", "marriage": "pairing", "mother": "the_matrix", "mom": "the_matrix", "mama": "the_matrix",
+"daughter": "the_manifestation", "girl": "the_manifestation", "princess": "the_manifestation"
+                
             };
 
             if (noiseMap[query]) { query = noiseMap[query]; }
