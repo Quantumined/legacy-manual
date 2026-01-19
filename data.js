@@ -1,5 +1,5 @@
 const manual = {
-    // --- THE CORE TRIAD ---
+    // --- THE CORE TRIAD (The Primary Corrupt Vowels) ---
     "husband": {
         "root": "Z-W-J (ز و ج)",
         "logic": "The function is not 'being a husband'; it is the active process of 'Pairing.'",
@@ -19,7 +19,7 @@ const manual = {
         "legacy": "A network that remained resilient because the routing logic was precise, selfless, and timely."
     },
 
-    // --- FOUNDATIONAL ROLES ---
+    // --- FOUNDATIONAL ROLES (Relational Vowels) ---
     "father": {
         "root": "A-B-W (أ ب و)",
         "logic": "The function of 'Cultivation.'",
@@ -38,6 +38,12 @@ const manual = {
         "method": "Providing lateral support to the system. Like a brace in a structure, you absorb the side-loads so the other does not buckle.",
         "legacy": "A structure that survived the storm because its components were braced together."
     },
+    "leader": {
+        "root": "I-M-M (أ م م)",
+        "logic": "The function of 'Front-Running' or 'Prototyping.'",
+        "method": "Existing at the leading edge of the script so others can see the logic in action. You are the 'Imam' or the first instance of a successful execution.",
+        "legacy": "A clear path blazed for others to navigate safely."
+    },
     "neighbor": {
         "root": "J-W-R (ج و ر)",
         "logic": "The function of 'Proximity Protection.'",
@@ -45,7 +51,7 @@ const manual = {
         "legacy": "A community where the 'Self' is defined by the safety of the perimeter."
     },
 
-    // --- UNIVERSAL CONSTANTS ---
+    // --- UNIVERSAL CONSTANTS (The Structural Consonants) ---
     "truth": {
         "root": "Ḥ-Q-Q (ح ق ق)",
         "logic": "The function of 'Calibration' to reality.",
@@ -71,7 +77,7 @@ const manual = {
         "legacy": "A world that did not tilt because the weights were distributed with absolute precision."
     },
 
-    // --- INTERNAL DRIVERS ---
+    // --- INTERNAL DRIVERS (The Hardware) ---
     "heart": {
         "root": "Q-L-B (ق ل ب)",
         "logic": "The function of 'Inversion' and 'Calibration.'",
@@ -96,8 +102,14 @@ const manual = {
         "method": "Restraining the urge to react prematurely. It is the capacity to hold a position while the script processes through a delay or trial.",
         "legacy": "A result that was earned through the refusal to break under pressure."
     },
+    "love": {
+        "root": "W-D-D (و د د)",
+        "logic": "The function of 'Constant Attachment.'",
+        "method": "The adhesive logic that keeps the components of the system bonded together even when the environmental temperature increases.",
+        "legacy": "A script that remained intact through every trial because the bonds were unbreakable."
+    },
 
-    // --- SYSTEM TOOLS ---
+    // --- SYSTEM TOOLS (The Interface) ---
     "pen": {
         "root": "Q-L-M (ق ل م)",
         "logic": "The function of 'Transcription.'",
@@ -116,8 +128,7 @@ const manual = {
         "method": "Converting internal logic into external force. Every word is a command sent to the environment to alter its state.",
         "legacy": "A ripple effect that continued to shape reality long after the sound ceased."
     },
-
-    // --- ACTIONS & STATES ---
+        // --- ACTIONS & STATES (Operational Modes) ---
     "success": {
         "root": "F-L-Ḥ (ف ل ح)",
         "logic": "The function of 'Cleaving.'",
@@ -133,455 +144,535 @@ const manual = {
     "mercy": {
         "root": "R-Ḥ-M (ر ح م)",
         "logic": "The function of 'Womb-like Protection.'",
-        "method": "Enveloping a flawed component in a protective layer to allow it the space and safety to repair and grow.",
-        "legacy": "A community of healed scripts that would have otherwise been discarded."
+        "method": "Enveloping a flawed or growing component in a protective layer to allow it the space to repair. It is the 'Safe Mode' for growth.",
+        "legacy": "A community of healed scripts that would have otherwise been discarded by the environment."
     },
     "trial": {
         "root": "B-L-W (ب ل و)",
         "logic": "The function of 'Stress-Testing.'",
-        "method": "The intentional application of load to the system to identify weak points in the logic. It is the precursor to strengthening.",
-        "legacy": "A hardened, verified script that can now be trusted with greater loads."
+        "method": "The intentional application of load to identify weak points in the logic. Trial is the precursor to verified strength.",
+        "legacy": "A hardened, verified script that can now be trusted with greater systemic responsibility."
     },
-        // --- ENVIRONMENTAL FORCES ---
-    "light": {
-        "root": "N-W-R (ن و ر)",
-        "logic": "The function of 'Clarification.'",
-        "method": "Increasing the visibility of the Script’s parameters. Light is the removal of ambiguity so that the path becomes navigable.",
-        "legacy": "A transparent environment where no logic was hidden and no error went unnoticed."
-    },
-    "life": {
-        "root": "Ḥ-Y-Y (ح ي ي)",
-        "logic": "The function of 'Activation.'",
-        "method": "The state of being 'online' and executable. It is the period where the Script has the capacity to process inputs and generate outputs.",
-        "legacy": "A high-uptime record characterized by continuous, purposeful execution."
-    },
-    "death": {
-        "root": "M-W-T (م و ت)",
-        "logic": "The function of 'Termination & Archiving.'",
-        "method": "The cessation of active processing. The Script is locked, and the output is compiled into its final, unchangeable state.",
-        "legacy": "A completed archive that serves as a fixed reference point for all future systems."
-    },
-    "wealth": {
-        "root": "M-W-L (م و ل)",
-        "logic": "The function of 'Circulation.'",
-        "method": "The accumulation of resources intended for deployment. Wealth is stagnant logic; it only gains value when 'spent' to execute a function.",
-        "legacy": "A legacy of fueled projects that would not have moved without your resource-routing."
-    },
-    "power": {
-        "root": "Q-D-R (ق د ر)",
-        "logic": "The function of 'Capacity.'",
-        "method": "The measured ability to perform work. It is the voltage behind the Script, allowing for the movement of heavy 'packets' of responsibility.",
-        "legacy": "A record of heavy-lifting where the system’s capacity was never wasted on trivial tasks."
-    },
-
-    // --- SYSTEMIC STATES ---
     "guidance": {
         "root": "H-D-Y (ه د ي)",
-        "logic": "The function of 'Orientation.'",
-        "method": "The continuous recalculation of the trajectory to ensure the system remains on the Straight Path ($Ṣ-R-Ṭ$). It is the GPS of intent.",
-        "legacy": "A journey that arrived at its intended destination without drifting into systemic error."
-    },
-    "error": {
-        "root": "Ḍ-L-L (ض ل ل)",
-        "logic": "The function of 'Deviation.'",
-        "method": "Processing data outside the established parameters of the Script. It is a logic-gate failure that leads to a loss of orientation.",
-        "legacy": "A warning system for others, showing where the path becomes unstable."
-    },
-    "soul": {
-        "root": "N-F-S (ن ف س)",
-        "logic": "The function of 'Individualization.'",
-        "method": "The unique instance of the Script. It is the 'Driver' that navigates the physical environment and experiences the feedback loops.",
-        "legacy": "A distinct, well-defined character that proved the logic could be lived in a unique way."
-    },
-    "spirit": {
-        "root": "R-W-Ḥ (ر و ح)",
-        "logic": "The function of 'Connectivity.'",
-        "method": "The high-speed link between the Creator and the Created. It is the inspiration that provides the energy and the 'Why' behind the execution.",
-        "legacy": "A life that felt 'alive' and inspired, drawing from a source beyond its own local hardware."
-    },
-    "covenant": {
-        "root": "ʿ-H-D (ع ه د)",
-        "logic": "The function of 'Binding Agreement.'",
-        "method": "The foundational contract that governs the system. It is the 'Terms of Service' that must be upheld for the system to remain valid.",
-        "legacy": "A reputation for absolute reliability, where the contract was never breached."
+        "logic": "The function of 'Signal Alignment.'",
+        "method": "Matching the local trajectory with the broadcast frequency of the Source. It is the GPS of the soul.",
+        "legacy": "A path that reached its destination without wasted energy or aimless drifting."
     },
 
-    // --- PHYSICAL INFRASTRUCTURE ---
+    // --- THE KERNEL COMMANDS (The Processor Logic) ---
+    "read": {
+        "root": "Q-R-A (ق ر أ)",
+        "logic": "The function of 'Data Assembly.'",
+        "method": "Collecting scattered signs (Ayat) and compiling them into a coherent meaning. This is the command to execute the manual.",
+        "legacy": "A life that was understood and articulated, rather than just reacted to."
+    },
+    "intend": {
+        "root": "N-W-Y (ن و ي)",
+        "logic": "The function of 'Directional Vector.'",
+        "method": "Setting the internal heading (Niyyah) that determines the ultimate value of every data packet processed.",
+        "legacy": "An archive where every action, no matter how small, was oriented toward the Absolute."
+    },
+    "strive": {
+        "root": "J-H-D (ج ه د)",
+        "logic": "The function of 'System Strain.'",
+        "method": "The internal energy required to push back against environmental friction. It is the fuel for the 'Build'.",
+        "legacy": "A record of expansion achieved through the refusal to remain static."
+    },
+    "reflect": {
+        "root": "F-K-R (ف ك ر)",
+        "logic": "The function of 'Logic Debugging.'",
+        "method": "Deconstructing concepts into their root components to verify their architecture and remove errors.",
+        "legacy": "A system that optimized itself continuously through deep internal audit."
+    },
+    "stay": {
+        "root": "B-Q-Y (ب ق ي)",
+        "logic": "The function of 'Data Persistence.'",
+        "method": "Determining what remains in the permanent record after the temporary environment (Dunya) is cleared.",
+        "legacy": "The eternal output—the part of your life that never deletes."
+    },
+
+    // --- THE BAD VOWELS (Reclaimed Feedback Loops: 11-21) ---
+    "slave": {
+        "root": "ʿ-B-D (ع ب د)",
+        "logic": "The function of 'Total Utility.'",
+        "method": "Being a tool that is 100% responsive to the hand of the User (The Source). It is the state of zero ego resistance.",
+        "legacy": "Absolute efficiency where the tool and the Will of the Source became one."
+    },
+    "loser": {
+        "root": "Kh-S-R (خ س ر)",
+        "logic": "The function of 'Systemic Leakage.'",
+        "method": "A state where the output is consistently less than the energy input. A signal to check for cracks in the script.",
+        "legacy": "The realization that time was spent on processes that yielded no persistent data."
+    },
+    "liar": {
+        "root": "K-Dh-B (ك ذ ب)",
+        "logic": "The function of 'Data Corruption.'",
+        "method": "The intentional transmission of false data packets. It causes the internal system to eventually crash due to lack of Truth-alignment.",
+        "legacy": "A warning of how a single corrupt variable can invalidate an entire directory."
+    },
+    "oppressor": {
+        "root": "Ẓ-L-M (ظ ل م)",
+        "logic": "The function of 'Misplacement.'",
+        "method": "Placing a component where it does not belong. It is the disruption of the universal 'Balance' ($ʿ-D-L$).",
+        "legacy": "The darkness and friction caused by forcing a script into an unnatural position."
+    },
+    "hypocrite": {
+        "root": "N-F-Q (ن ف ق)",
+        "logic": "The function of 'Data Mismatch.'",
+        "method": "A state where the internal private script does not match the external public output. A loss of system pressure.",
+        "legacy": "A divided legacy that stood for nothing because it tried to run two conflicting codes simultaneously."
+    },
+    "ignorant": {
+        "root": "J-H-L (ج ه ل)",
+        "logic": "The function of 'Processing Gap.'",
+        "method": "Attempting to execute an action without having the necessary data logs. A state requiring the input of 'Light' ($N-W-R$).",
+        "legacy": "The starting point of every component before it is programmed by experience and truth."
+    },
+    "sinner": {
+        "root": "Dh-N-B (ذ ن ب)",
+        "logic": "The function of 'The Tail.'",
+        "method": "The trailing baggage left behind by an incorrect execution. It is the 'debt' that must be cleared via System Reset ($T-W-B$).",
+        "legacy": "The heavy weight of unresolved errors that slows down the system's progress."
+    },
+    "traitor": {
+        "root": "Kh-W-N (خ و ن)",
+        "logic": "The function of 'Circuit Breach.'",
+        "method": "A sudden, intentional disconnection from the network of trust and the established Covenant.",
+        "legacy": "The isolation that occurs when a component can no longer be trusted by the rest of the system."
+    },
+    "miser": {
+        "root": "B-Kh-L (ب خ ل)",
+        "logic": "The function of 'Buffer Overload.'",
+        "method": "Refusing to route resources to other components. It causes stagnant accumulation and eventually poisons the router.",
+        "legacy": "A dead-end in the network where flow stopped and decay began."
+    },
+    "beggar": {
+        "root": "S-A-L (س ئ ل)",
+        "logic": "The function of 'Request Signal.'",
+        "method": "Identifying a void in the local system and sending an outward request for provision. A signal that triggers the 'Router'.",
+        "legacy": "A record of how the Source responded to every honest request for resources."
+    },
+        // --- FINAL BAD VOWEL ---
+    "fool": {
+        "root": "S-F-H (س ف ه)",
+        "logic": "The function of 'Dilution.'",
+        "method": "A state where the logic is too thin or shallow to hold its form. It is the waste of processing power on trivial variables.",
+        "legacy": "A record of energy that evaporated into the environment without leaving a structural footprint."
+    },
+
+    // --- SOCIETAL VOWELS (Status Refactoring) ---
+    "wealthy": {
+        "root": "Gh-N-Y (غ ن ي)",
+        "logic": "The function of 'Saturation.'",
+        "method": "Being so full of internal logic and Source-connection that the system no longer sends 'Request' signals to the environment.",
+        "legacy": "A state of independence where the script was powered entirely by internal/divine reserves."
+    },
+    "poor": {
+        "root": "F-Q-R (ف ق ر)",
+        "logic": "The function of 'Structural Need.'",
+        "method": "A state where the 'Spine' (Faqar) of the script is exposed, requiring a direct, unmediated link to the Source for sustenance.",
+        "legacy": "A verified record of how the Source sustains a system that has no other visible supports."
+    },
+    "powerful": {
+        "root": "Q-D-R (ق د ر)",
+        "logic": "The function of 'Calculated Capacity.'",
+        "method": "Having the exact 'Voltage' or measurement required to execute a specific decree. Power is precision, not dominance.",
+        "legacy": "A series of high-impact executions where force was applied with absolute mathematical accuracy."
+    },
+
+    // --- STRUCTURAL CONSONANTS (The Workspace Hardware) ---
     "earth": {
         "root": "A-R-Ḍ (أ ر ض)",
-        "logic": "The function of 'Platform.'",
-        "method": "The physical hardware and stage upon which the Script is executed. It provides the constraints and the resources for growth.",
-        "legacy": "A plot of reality that was left better, more fertile, and more organized than it was found."
+        "logic": "The function of 'The Workspace Substrate.'",
+        "method": "The physical platform provided for the build. It is the soil that accepts the seed and the foundation that holds the stone.",
+        "legacy": "A permanent footprint left in the material realm, evidence of the work performed."
     },
     "sky": {
-        "root": "S-M-W (س م و)",
-        "logic": "The function of 'Elevation & Protection.'",
-        "method": "The roof of the system that provides perspective and protection from external radiation. It represents the higher-order logic.",
-        "legacy": "A life lived with 'high-ceiling' thinking, never losing sight of the overhead vision."
-    },
-    "water": {
-        "root": "M-W-H (م و ه)",
-        "logic": "The function of 'Solubility & Vitality.'",
-        "method": "The medium that allows all other components to mix and react. It is the fundamental 'coolant' and life-sustainer of the system.",
-        "legacy": "A refreshing presence that allowed every other function to grow and thrive around it."
-    },
-    "mountain": {
-        "root": "J-B-L (ج ب ل)",
-        "logic": "The function of 'Stability.'",
-        "method": "Providing the necessary weight and verticality to keep the 'Earth' (Platform) from shaking. It is the anchor of the system.",
-        "legacy": "An unmovable legacy of principle that provided shelter and stability for everyone in its shadow."
-    },
-
-    // --- INTELLECTUAL TOOLS ---
-    "command": {
-        "root": "A-M-R (أ م ر)",
-        "logic": "The function of 'Directive.'",
-        "method": "A high-priority packet of code that overrides all other processes. It is the 'Root' authority issuing a task for immediate execution.",
-        "legacy": "A life of discipline where the highest commands were executed without hesitation."
-    },
-    "creation": {
-        "root": "Kh-L-Q (خ ل ق)",
-        "logic": "The function of 'Measurement & Shaping.'",
-        "method": "Bringing a specific design into existence through precise measurement and proportion. It is the act of manufacturing reality.",
-        "legacy": "A tangible world of high-quality artifacts (ideas, children, works) built with precision."
-    },
-    "test": {
-        "root": "F-T-N (ف ت ن)",
-        "logic": "The function of 'Purification via Heat.'",
-        "method": "Placing the Script in a high-pressure, high-heat environment to separate the 'gold' (truth) from the 'dross' (ego).",
-        "legacy": "A pure, verified character that emerged from the fire without being consumed."
-    },
-    "return": {
-        "root": "R-J-ʿ (ر ج ع)",
-        "logic": "The function of 'Feedback Loop.'",
-        "method": "The inevitable process where all outputs must return to the Source for evaluation. It is the closing of the system's circuit.",
-        "legacy": "A clean final audit where every action was accounted for and returned with value."
-    },
-    "trust": {
-        "root": "A-M-N (أ م ن)",
-        "logic": "The function of 'Security.'",
-        "method": "The state where a component is so reliable that other parts of the system can depend on it without secondary verification.",
-        "legacy": "A legacy of safety, where your name was synonymous with an unbreakable promise."
-    },
-    "path": {
-        "root": "Ṣ-R-Ṭ (ص ر ط)",
-        "logic": "The function of 'Trajectory.'",
-        "method": "The specific, narrow sequence of execution that leads to the objective. It is the single-track logic that avoids all waste.",
-        "legacy": "A clear, straight line through history that others can follow without getting lost."
-    },
-        // --- DYNAMIC POLARITIES ---
-    "darkness": {
-        "root": "Ẓ-L-M (ظ ل م)",
-        "logic": "The function of 'Obscurity' or 'Injustice.'",
-        "method": "The absence of light where things are misplaced or hidden. It is a systemic state where components cannot see their intended functions.",
-        "legacy": "A record of the voids you filled with light to prevent the corruption of hidden logic."
+        "root": "S-M-A (س م ا)",
+        "logic": "The function of 'The System Ceiling.'",
+        "method": "The upward limit of the local environment. It serves as the 'Roof' ($S-M-K$) that protects and defines the boundaries of the workspace.",
+        "legacy": "A reminder of the vastness of the code that exists beyond the local instance."
     },
     "sun": {
         "root": "Sh-M-S (ش م س)",
-        "logic": "The function of 'Constant Energy Source.'",
-        "method": "Providing a reliable, high-intensity output that powers the entire environment. It is the primary driver of growth and visibility.",
-        "legacy": "A legacy of warmth and energy that sustained the system through every cycle."
+        "logic": "The function of 'External Power Supply.'",
+        "method": "Providing the constant, radiant energy required for the activation of physical life-cycles. It is the timer of the workspace.",
+        "legacy": "A record of days utilized while the energy was available."
     },
     "moon": {
         "root": "Q-M-R (ق م ر)",
-        "logic": "The function of 'Reflected Guidance.'",
-        "method": "Directing light into the 'Darkness' (periods of low visibility) by reflecting the primary source. It provides timing and cycles.",
-        "legacy": "A consistent presence that provided navigation even when the primary source was out of phase."
+        "logic": "The function of 'Reflective Timing.'",
+        "method": "Tracking the phases of the script's progress. It provides light in the 'Darkness' by reflecting the primary source.",
+        "legacy": "A measurement of the cycles and seasons of the soul's development."
     },
-    "strength": {
-        "root": "Q-W-Y (ق و ي)",
-        "logic": "The function of 'Resilience.'",
-        "method": "The internal integrity that prevents the script from breaking under heavy load. It is the density of the character.",
-        "legacy": "An unbreakable structure that withstood the most extreme stress-tests."
+    "water": {
+        "root": "M-A-Y (م ا ي)",
+        "logic": "The function of 'The Life-Packet.'",
+        "method": "The fluid medium that carries the 'Instruction' to the seed. It is the universal solvent that allows for the flow of resources.",
+        "legacy": "A record of growth that was triggered by the arrival of pure, descending data."
     },
-    "weakness": {
-        "root": "Ḍ-ʿ-F (ض ع ف)",
-        "logic": "The function of 'Structural Vulnerability.'",
-        "method": "Identifying the points in the system where the script is most likely to fail. It is the 'buffer' that requires external support.",
-        "legacy": "A humble acknowledgement of limits that allowed for the integration of 'Brother' (Bracing) logic."
+    "mountain": {
+        "root": "J-B-L (ج ب ل)",
+        "logic": "The function of 'Stability Pegs.'",
+        "method": "Deeply rooted structures that anchor the workspace, preventing the 'crust' of your reality from shaking or drifting.",
+        "legacy": "The points of unshakeable conviction that held the system together during tectonic shifts."
     },
-
-    // --- SOCIAL & RELATIONAL CONTRACTS ---
-    "ally": {
-        "root": "W-L-Y (و ل ي)",
-        "logic": "The function of 'Proximity & Protection.'",
-        "method": "An adjacent component that shares the same root logic and provides immediate backup. A relationship of mutual guardianship.",
-        "legacy": "A network of trust where the perimeter was never breached because the allies stood guard."
+    "light": {
+        "root": "N-W-R (ن و ر)",
+        "logic": "The function of 'Clarification.'",
+        "method": "The data that makes the path and the objects within the workspace visible. Without light, the script cannot be read.",
+        "legacy": "A journey where every step was seen, verified, and intentional."
     },
-    "enemy": {
-        "root": "ʿ-D-W (ع د و)",
-        "logic": "The function of 'Friction.'",
-        "method": "An external variable that actively seeks to interrupt the Script’s execution. It serves as the primary catalyst for growth and defense.",
-        "legacy": "A proven defense system that remained intact despite constant opposition."
+    "darkness": {
+        "root": "Ẓ-L-M (ظ ل م)",
+        "logic": "The function of 'Data Absence.'",
+        "method": "A state where the 'Light' is withheld, often as a result of misplacing components ($Ẓulm$). It is the 'Offline' state.",
+        "legacy": "The contrast that makes the value of the Light undeniable."
     },
-    "word": {
-        "root": "K-L-M (ك ل م)",
-        "logic": "The function of 'Wounding & Etching.'",
-        "method": "The delivery of a discrete unit of meaning that leaves a permanent mark on the receiver. Words are the 'incisions' of intent.",
-        "legacy": "A record of precise communication that shaped reality without leaving unnecessary scars."
+    "fire": {
+        "root": "N-A-R (ن ا ر)",
+        "logic": "The function of 'Consumption and Purification.'",
+        "method": "A high-energy state that breaks down corrupt or temporary data. It is the 'Burn-In' test for the soul.",
+        "legacy": "What remains after the heat has removed all the impurities from the script."
+    },
+    "wind": {
+        "root": "R-Y-Ḥ (ر ي ح)",
+        "logic": "The function of 'Inspiration and Movement.'",
+        "method": "The invisible force that carries the 'scent' of data and drives the movement of the clouds (resources).",
+        "legacy": "The momentum that shifted the environment when the system felt stagnant."
+    },
+    "cloud": {
+        "root": "S-Ḥ-B (س ح ب)",
+        "logic": "The function of 'Resource Transport.'",
+        "method": "The heavy-duty data packets that carry the 'Water' to the dry areas of the workspace.",
+        "legacy": "The timely arrival of relief and sustenance exactly when the system reached a critical dry point."
+    },
+    "tree": {
+        "root": "Sh-J-R (ش ج ر)",
+        "logic": "The function of 'Branching Logic.'",
+        "method": "A structure that takes simple roots and expands them into a complex, fruit-bearing system. It is the 'Growth Chart'.",
+        "legacy": "A shade-giving legacy that started as a single word ($K-L-M$) and grew into a massive network."
+    },
+    "fruit": {
+        "root": "Th-M-R (ث م ر)",
+        "logic": "The function of 'System Yield.'",
+        "method": "The tangible, edible output of a long-running process. It is the reward for the labor of the 'Builder'.",
+        "legacy": "The sweetness left behind for others to consume and benefit from."
+    },
+    "seed": {
+        "root": "Ḥ-B-B (ح ب ب)",
+        "logic": "The function of 'Encapsulated Potential.'",
+        "method": "The smallest unit of the script containing the entire blueprint of the future 'Tree'. It is the core of 'Love' ($Ḥubb$).",
+        "legacy": "The small, intentional actions that eventually became the entire landscape."
+    },
+    "path": {
+        "root": "Ṣ-R-Ṭ (ص ر ط)",
+        "logic": "The function of 'Orientation.'",
+        "method": "The specific trajectory through the workspace that leads directly to the 'Return' ($M-A-D$). The 'Straight Line'.",
+        "legacy": "A life that did not waste energy on inefficient, zigzagging paths."
     },
     "sign": {
         "root": "A-Y-T (أ ي ت)",
-        "logic": "The function of 'Pointer.'",
-        "method": "An environmental anomaly designed to redirect attention to a higher-order logic. Signs are the 'breadcrumbs' of the Creator.",
-        "legacy": "A life lived with eyes open, having correctly interpreted the data of the universe."
+        "logic": "The function of 'Data Points.'",
+        "method": "Individual markers in the environment that point back to the Logic of the Source. The 'Logs' of the universe.",
+        "legacy": "A collection of moments where the 'Hand' of the Creator was clearly visible."
+    }, 
+        // --- THE HARDWARE OF THE SELF (Peripheral Components) ---
+    "face": {
+        "root": "W-J-H (و ج ه)",
+        "logic": "The function of 'Orientation.'",
+        "method": "The primary interface of the system. Where the 'Face' is turned, the entire trajectory of the script follows.",
+        "legacy": "A record of exactly which direction the system was pointed at every critical junction."
     },
-    "reminder": {
-        "root": "Dh-K-R (ذ ك ر)",
-        "logic": "The function of 'Retention.'",
-        "method": "The process of re-uploading the Script into active memory to prevent 'Forgetfulness' ($N-S-Y$). It is a system refresh.",
-        "legacy": "A legacy of consistency, where the mission was never forgotten or diluted."
+    "eye": {
+        "root": "ʿ-Y-N (ع ي ن)",
+        "logic": "The function of 'Visual Intake.'",
+        "method": "The optical sensor that captures the 'Signs' (Ayat). It is the primary tool for 'Observation'.",
+        "legacy": "A history of what was allowed into the system's buffer and what was ignored."
     },
-
-    // --- MEASUREMENT & CALIBRATION ---
-    "heedfulness": {
-        "root": "T-Q-W (ت ق و)",
-        "logic": "The function of 'Shielding.'",
-        "method": "The constant awareness of the boundaries ($Ḥ-D-D$). It is the 'firewall' that prevents the system from executing harmful code.",
-        "legacy": "A life of high security, protected from the corruption of systemic error."
-    },
-    "balance": {
-        "root": "M-Z-N (م ي ز)",
-        "logic": "The function of 'Equilibrium.'",
-        "method": "The continuous adjustment of weights to ensure the 'Justice' ($ʿ-D-L$) of the system. It prevents the tilting of reality.",
-        "legacy": "A perfectly leveled output, where nothing was taken that was not earned."
-    },
-    "weight": {
-        "root": "Th-Q-L (ث ق ل)",
-        "logic": "The function of 'Significance.'",
-        "method": "The measure of a component’s impact on the overall system. Heavy weights represent the core priorities of the Script.",
-        "legacy": "A life of substance, where the actions had enough weight to leave an imprint on history."
-    },
-    "message": {
-        "root": "R-S-L (ر س ل)",
-        "logic": "The function of 'Transmission.'",
-        "method": "The packet of logic sent from the Source to the Receiver. It contains the instructions for the next phase of growth.",
-        "legacy": "The successful delivery of the truth to the next generation."
-    },
-    "witness": {
-        "root": "Sh-H-D (ش ه د)",
-        "logic": "The function of 'Observation & Verification.'",
-        "method": "Providing a first-hand account of the Script’s execution. A witness is the 'logging' system of reality.",
-        "legacy": "An undeniable record of truth that requires no secondary proof."
-    },
-
-    // --- SENSORY PROCESSING LAYERS ---
-    "sight": {
-        "root": "B-Ṣ-R (ب ص ر)",
-        "logic": "The function of 'Insight.'",
-        "method": "The processing of visual data to understand the underlying structure. It is seeing through the surface into the logic.",
-        "legacy": "A vision that looked beyond the immediate and planned for the eternal."
-    },
-    "hearing": {
-        "root": "S-M-ʿ (س م ع)",
-        "logic": "The function of 'Input Processing.'",
-        "method": "The active reception of audio-logical data. Hearing is the prerequisite for 'Obedience' ($Ṭ-W-ʿ$).",
-        "legacy": "A reputation for listening to the truth and filtering out the noise."
+    "ear": {
+        "root": "U-Dh-N (أ ذ ن)",
+        "logic": "The function of 'Audio Frequency Intake.'",
+        "method": "The sensor for 'Listening' ($S-M-ʿ$). It filters the vibrations of the environment to extract the 'Command'.",
+        "legacy": "Evidence that the system was responsive to the 'Call' ($A-Dh-N$) of the Source."
     },
     "tongue": {
         "root": "L-S-N (ل س ن)",
-        "logic": "The function of 'Articulation.'",
-        "method": "The physical tool for converting internal logic into the 'Word' ($K-L-M$). It is the output port of the soul.",
-        "legacy": "A stream of speech that only spoke what was true and beneficial."
+        "logic": "The function of 'The Translator.'",
+        "method": "The hardware that converts internal logic into shared vibrations. It is the bridge between two scripts.",
+        "legacy": "A record of the clarity and truthfulness of the messages sent to the network."
     },
     "hand": {
         "root": "Y-D-Y (ي د ي)",
-        "logic": "The function of 'Grasp & Agency.'",
-        "method": "The primary interface for manipulating the physical environment. It is the tool of 'Action' ($ʿ-M-L$).",
-        "legacy": "A record of things built, held, and given with intentionality."
+        "logic": "The function of 'Execution and Force.'",
+        "method": "The primary tool for 'Building' and 'Routing'. It is the physical manifestation of the system's power to alter reality.",
+        "legacy": "The tangible changes left in the workspace; the 'Handiwork' of the script."
     },
     "foot": {
         "root": "R-J-L (ر ج ل)",
-        "logic": "The function of 'Movement & Stand.'",
-        "method": "The tool of 'Trajectory' ($Ṣ-R-Ṭ$) and the 'Stand' ($Q-W-M$). It represents where the system chooses to position itself.",
-        "legacy": "A path clearly marked by the places where you chose to stand firm."
+        "logic": "The function of 'Locomotion.'",
+        "method": "The hardware that physically carries the 'Instance' along the 'Path'. It provides the 'Steps' of progress.",
+        "legacy": "A footprint that shows a steady, unwavering march toward the 'Return'."
     },
-    "face": {
-        "root": "W-J-H (و ج ه)",
-        "logic": "The function of 'Directional Intent.'",
-        "method": "The part of the system that faces the objective. It is the indicator of where the 'Heart' ($Q-L-B$) is aimed.",
-        "legacy": "A life that never turned away from its ultimate goal."
-    },
-    "purity": {
-        "root": "Z-K-W (ز ك و)",
-        "logic": "The function of 'Growth via Pruning.'",
-        "method": "Removing the excess and the corrupted parts of the system to allow the healthy parts to grow faster.",
-        "legacy": "A lean, high-performance system that grew because it was willing to shed the unnecessary."
+    "back": {
+        "root": "Ẓ-H-R (ظ ه ر)",
+        "logic": "The function of 'Load Bearing.'",
+        "method": "The structural support that carries the weight of the 'Provider' and 'Father' roles. It is the 'Hidden Support'.",
+        "legacy": "A record of the burdens carried so that others could stand upright."
     },
     "blood": {
         "root": "D-M-W (د م و)",
-        "logic": "The function of 'Life-Force Circulation.'",
-        "method": "The internal medium that carries energy to every cell. It is the physical link to the 'Lineage' ($N-S-L$).",
-        "legacy": "A life sacrificed for a higher logic, ensuring the survival of the Script."
+        "logic": "The function of 'Internal Circulation.'",
+        "method": "The fluid energy that carries life-data to every component of the hardware. It is the 'Internal Logistics'.",
+        "legacy": "A life lived with high-vitality energy, never allowing the 'Internal Flow' to stagnate."
+    },
+    "skin": {
+        "root": "J-L-D (ج ل د)",
+        "logic": "The function of 'System Boundary.'",
+        "method": "The protective layer that separates the 'Internal Script' from the 'External Environment'. It is the sensor of 'Touch'.",
+        "legacy": "The resilience shown when the environment was harsh; a boundary that remained unbreached."
+    },
+    "bone": {
+        "root": "ʿ-Ẓ-M (ع ظ م)",
+        "logic": "The function of 'The Frame.'",
+        "method": "The rigid architecture that prevents the system from collapsing. It is the 'Greatness' ($ʿ-Ẓ-M$) of the structure.",
+        "legacy": "A framework that remained strong even when the 'Soft Tissue' of the ego was under pressure."
+    },
+
+    // --- STATES OF THE INSTANCE ---
+    "life": {
+        "root": "Ḥ-Y-Y (ح ي ي)",
+        "logic": "The function of 'Activation.'",
+        "method": "The period where the script is 'Online' and the hardware is responding to the Command Signal.",
+        "legacy": "A verified uptime where every cycle was utilized for the 'Build'."
+    },
+    "death": {
+        "root": "M-W-T (م و ت)",
+        "logic": "The function of 'Deactivation.'",
+        "method": "The end of the local processing cycle. The state where the data is moved to 'Persistent Storage'.",
+        "legacy": "The transition point where the 'Method' stops and the 'Audit' begins."
     },
     "sleep": {
         "root": "N-W-M (ن و م)",
         "logic": "The function of 'System Maintenance.'",
-        "method": "A temporary offline state for 'Repair' and 'Recharge.' It is a minor version of 'Death' ($M-W-T$) for the sake of 'Life' ($Ḥ-Y-Y$).",
-        "legacy": "A rhythm of rest that allowed for a longer, more effective execution of the mission."
+        "method": "A temporary deactivation ($W-F-T$) that allows the hardware to repair and the data to be sorted.",
+        "legacy": "A reminder that the 'Instance' is dependent on the 'Source' for every daily reboot."
     },
-    "news": {
-        "root": "N-B-A (ن ب أ)",
-        "logic": "The function of 'Urgent Data.'",
-        "method": "Significant information regarding the state of the system or the environment. It is data that requires an immediate response.",
-        "legacy": "A history of being informed and prepared for the 'Great Event'."
+    "awake": {
+        "root": "Y-Q-Ẓ (ي ق ظ)",
+        "logic": "The function of 'System Readiness.'",
+        "method": "The state of full alertness where the sensors (eyes/ears) are at maximum sensitivity to the 'Signs'.",
+        "legacy": "A record of being 'Present' and 'Aware' during the critical moments of the script."
     },
-        // --- EXISTENTIAL & EMOTIONAL LOGIC ---
-    "love": {
-        "root": "Ḥ-B-B (ح ب ب)",
-        "logic": "The function of 'Cohesion.'",
-        "method": "The gravitational force that binds components together at the core (the 'Seed'). It is the ultimate driver of systemic unity.",
-        "legacy": "A legacy of unbreakable bonds that held the system together long after the individual parts ceased."
+    "soul": {
+        "root": "N-F-S (ن ف س)",
+        "logic": "The function of 'The Individual Instance.'",
+        "method": "The unique 'Self' that is being tested. It is the 'Breathing' ($N-F-S$) entity that owns the choices.",
+        "legacy": "A singular, purified identity that successfully navigated the test."
     },
-    "hate": {
-        "root": "B-Gh-Ḍ (ب غ ض)",
-        "logic": "The function of 'Systemic Rejection.'",
-        "method": "Identifying and pushing away variables that are incompatible with the Script. It is a necessary defense against corruption.",
-        "legacy": "A clean environment, preserved because you had the courage to reject what was harmful."
-    },
-    "forgiveness": {
-        "root": "Gh-F-R (غ ف ر)",
-        "logic": "The function of 'Data Overwriting & Shielding.'",
-        "method": "Covering a systemic error with a layer of protection to prevent it from crashing the process. It is the 'Patch' that allows the Script to continue.",
-        "legacy": "A system that did not fail due to its mistakes, but evolved through its repairs."
-    },
-    "anger": {
-        "root": "G-Ḍ-B (غ ض ب)",
-        "logic": "The function of 'Boundary Enforcement.'",
-        "method": "A rapid increase in systemic pressure (heat) to repel a perceived threat or violation of the Script’s parameters.",
-        "legacy": "A record of justice, where boundaries were respected because the system signaled its limits clearly."
-    },
-    "fear": {
-        "root": "Kh-W-F (خ و ف)",
-        "logic": "The function of 'Threat Detection.'",
-        "method": "A high-priority alert system that scans for potential data loss or systemic destruction. It is the 'Antivirus' of the soul.",
-        "legacy": "A life preserved through cautious navigation and the avoidance of high-risk errors."
-    },
-    "hope": {
-        "root": "R-J-W (ر ج و)",
-        "logic": "The function of 'Expected Output.'",
-        "method": "Calculated optimism based on the alignment of the Script with the Source. It is the 'buffer' that keeps the system running during delays.",
-        "legacy": "A record of endurance, maintained by the certainty of a positive final compilation."
-    },
-    "joy": {
-        "root": "F-R-Ḥ (ف ر ح)",
-        "logic": "The function of 'Systemic Expansion.'",
-        "method": "The state of high-efficiency execution where all internal parts are synchronized. It is the celebration of a successful 'Build.'",
-        "legacy": "A history of moments where the Script reached its peak performance and radiated value."
-    },
-    "grief": {
-        "root": "Ḥ-Z-N (ح ز ن)",
-        "logic": "The function of 'Loss Processing.'",
-        "method": "The slow-motion processing of a missing component. It is the 'roughness' felt when the system attempts to run a script with a deleted variable.",
-        "legacy": "A deepened character, refined by the friction of what was lost but never forgotten."
-    },
-
-    // --- SYSTEMIC STATES & CAPACITY ---
-    "self-sufficiency": {
-        "root": "Gh-N-Y (غ ن ي)",
-        "logic": "The function of 'Internal Saturation.'",
-        "method": "Reaching a state where the internal resources are sufficient to execute the Script without external 'Requests.'",
-        "legacy": "An independent legacy that provided for others because it was never drained by its own needs."
-    },
-    "poverty": {
-        "root": "F-Q-R (ف ق ر)",
-        "logic": "The function of 'Structural Dependency.'",
-        "method": "A state where the 'Spine' (the structural support) is under extreme load due to a lack of inputs. It forces a 'Request' to the Source.",
-        "legacy": "A humble record of reliance that proved the Source is the only true Provider."
+    "spirit": {
+        "root": "R-W-Ḥ (ر و ح)",
+        "logic": "The function of 'The Command Signal.'",
+        "method": "The invisible link that animates the hardware. It is the 'Wind' ($R-Y-Ḥ$) that gives the script its motion.",
+        "legacy": "A life that was energized by a purpose higher than the material substrate."
     },
     "hunger": {
         "root": "J-W-ʿ (ج و ع)",
-        "logic": "The function of 'Input Demand.'",
-        "method": "The systemic signal for energy replenishment. It is the void that drives the search for 'Router' ($R-Z-Q$) activity.",
-        "legacy": "A discipline of the gut that sharpened the focus on what truly nourishes the system."
+        "logic": "The function of 'Resource Depletion Signal.'",
+        "method": "An internal alert that the system requires new 'Input' to continue the 'Build'.",
+        "legacy": "The discipline shown by redirecting hunger toward the 'Search' for Truth."
+    },
+    "thirst": {
+        "root": "ʿ-Ṭ-Sh (ع ط ش)",
+        "logic": "The function of 'Cooling/Hydration Signal.'",
+        "method": "The specific signal for the 'Water' of life. A reminder of the system's fundamental dependency.",
+        "legacy": "The realization that the 'Instance' cannot function for even a day without the 'Descending Provision'."
     },
     "strength": {
-        "root": "Sh-D-D (ش د د)",
-        "logic": "The function of 'Binding & Intensity.'",
-        "method": "The tightness of the connection between the Script and its execution. It is the force required to move heavy reality.",
-        "legacy": "A record of impact where the system changed the world through the intensity of its will."
+        "root": "Q-W-Y (ق و ي)",
+        "logic": "The function of 'Output Capacity.'",
+        "method": "The ability to exert force over time. It is the 'Voltage' of the hardware.",
+        "legacy": "Impactful actions that were only possible because the system was well-maintained."
     },
-    "arrogance": {
-        "root": "K-B-R (ك ب ر)",
-        "logic": "The function of 'Scale Distortion.'",
-        "method": "An error where a component perceives its size as larger than the Source. It leads to systemic misalignment and inevitable 'Crashing.'",
-        "legacy": "A warning to future systems about the fragility of a distorted ego."
+    "weakness": {
+        "root": "Ḍ-ʿ-F (ض ع ف)",
+        "logic": "The function of 'System Limitation.'",
+        "method": "The inherent gaps in the hardware that require the 'Source' to provide 'Reinforcement' ($N-Ṣ-R$).",
+        "legacy": "The humility gained by recognizing the limits of the 'Local Instance'."
     },
-    "humility": {
-        "root": "Kh-Sh-ʿ (خ ش ع)",
-        "logic": "The function of 'Systemic Attenuation.'",
-        "method": "Lowering the internal 'Volume' and ego-signals to better receive the commands of the Source. High-receptivity mode.",
-        "legacy": "A life of quiet power, where the most important signals were never drowned out."
-    },
-
-    // --- SOCIAL ORDER & DYNAMICS ---
+        // --- EXTERNAL LOGISTICS (Network & Environment) ---
     "community": {
         "root": "U-M-M (أ م م)",
-        "logic": "The function of 'Collective Scripting.'",
-        "method": "The synchronization of multiple 'Souls' ($N-F-S$) under a single 'Leader' ($I-M-M$) or purpose. It is the scaling of the Script.",
-        "legacy": "A civilization built on shared logic, capable of tasks no single script could execute."
+        "logic": "The function of 'Collective Purpose.'",
+        "method": "A cluster of 'Instances' running synchronized scripts toward a common 'Source' (Umm).",
+        "legacy": "A network that achieved more than the sum of its individual parts."
     },
-    "people": {
-        "root": "N-W-S (ن و س)",
-        "logic": "The function of 'Social Flux.'",
-        "method": "The dynamic, moving sea of human variables. It is the environment of constant 'swaying' and influence.",
-        "legacy": "A stable presence that navigated the tides of public opinion without losing its anchor."
+    "message": {
+        "root": "R-S-L (ر س ل)",
+        "logic": "The function of 'Data Transmission.'",
+        "method": "The packet of truth sent from the Source to be delivered to the target 'Instance' without distortion.",
+        "legacy": "A successful handoff of the truth from one generation to the next."
     },
-    "nations": {
-        "root": "Sh-ʿ-B (ش ع ب)",
-        "logic": "The function of 'Systemic Branching.'",
-        "method": "The natural division of the 'People' into specialized branches for better resource management and identification.",
-        "legacy": "A diverse forest of culture where every branch contributed to the overall health of humanity."
+    "witness": {
+        "root": "Sh-H-D (ش ه د)",
+        "logic": "The function of 'The Logger.'",
+        "method": "Observing and recording reality so that the 'Audit' can be performed with 100% accuracy. The 'Black Box' of the soul.",
+        "legacy": "A record that stood for truth even when the environment was hostile."
     },
-    "intercession": {
-        "root": "Sh-F-ʿ (ش ف ع)",
-        "logic": "The function of 'Coupled Validation.'",
-        "method": "The act of turning a 'Single' variable into an 'Even' pair by lending one’s own standing to another. It is the ultimate systemic support.",
-        "legacy": "A record of those you carried across the finish line by pairing your script with theirs."
+    "journey": {
+        "root": "S-F-R (س ف ر)",
+        "logic": "The function of 'Unveiling.'",
+        "method": "The physical or mental movement across the workspace that 'unveils' ($S-F-R$) new data points and signs.",
+        "legacy": "An expansive map of experience that provided the data for wisdom."
     },
-    "humanity": {
-        "root": "B-Sh-R (ب ش ر)",
-        "logic": "The function of 'Interface Sensitivity.'",
-        "method": "The 'Skin' of the system. It represents the direct, tactile contact between the Script and the physical world. It is the 'Human Face.'",
-        "legacy": "A legacy of warmth and approachability, where the truth was delivered with a 'Human Touch'."
+    "return": {
+        "root": "R-J-ʿ (ر ج ع)",
+        "logic": "The function of 'System Upload.'",
+        "method": "The inevitable moment where the local script is uploaded back to the Source for final integration.",
+        "legacy": "A trajectory that always kept the final destination in mind."
+    },
+    "news": {
+        "root": "N-B-A (ن ب أ)",
+        "logic": "The function of 'Critical Alert.'",
+        "method": "Significant data that changes the behavior or orientation of the system. High-impact information.",
+        "legacy": "A life that was responsive to the 'Great News' and acted before the deadline."
+    },
+    "word": {
+        "root": "K-L-M (ك ل م)",
+        "logic": "The function of 'The Wound/Impression.'",
+        "method": "A linguistic unit that leaves a permanent mark (Kalm) on the receiver's script. The smallest unit of intent.",
+        "legacy": "A collection of words that healed and built, rather than wounded and destroyed."
+    },
+    "command": {
+        "root": "A-M-R (أ م ر)",
+        "logic": "The function of 'The Instruction.'",
+        "method": "The high-priority signal that triggers a specific execution. The 'Matter' at hand.",
+        "legacy": "A record of immediate obedience to the highest-order logic."
     },
     "promise": {
         "root": "W-ʿ-D (و ع د)",
-        "logic": "The function of 'Future-Dated Execution.'",
-        "method": "A commitment to perform a task at a specific 'Time' ($ʿ-Ṣ-R$). It is the 'IOU' of the character.",
-        "legacy": "An unbroken chain of reliability, where every future-dated script was eventually executed."
+        "logic": "The function of 'Future-Data Security.'",
+        "method": "A commitment to a future output that the system treats as if it has already occurred.",
+        "legacy": "A reputation for reliability that anchored the trust of the entire network."
     },
-    "grace": {
-        "root": "N-ʿ-M (ن ع م)",
-        "logic": "The function of 'Systemic Optimization.'",
-        "method": "The 'Softness' or 'Ease' provided by the Source that allows the Script to run without friction. It is the lubricant of life.",
-        "legacy": "A life of apparent ease that was actually the result of perfect alignment with Grace."
+    "testimony": {
+        "root": "Sh-H-D (ش ه د)",
+        "logic": "The function of 'Public Declaration.'",
+        "method": "The external output of the internal 'Witness' state. Aligning public speech with observed truth.",
+        "legacy": "A life that served as evidence for the reality of the Script."
+    },
+
+    // --- SYSTEM EVENTS (Operational Milestones) ---
+    "victory": {
+        "root": "F-T-Ḥ (ف ت ح)",
+        "logic": "The function of 'The Opening.'",
+        "method": "A state where the barriers of the workspace are removed, allowing for rapid expansion and new data access.",
+        "legacy": "A breakthrough that allowed the Light to flood into a previously dark territory."
+    },
+    "forgiveness": {
+        "root": "Gh-F-R (غ ف ر)",
+        "logic": "The function of 'The Shielding.'",
+        "method": "Covering an error ($Gh-F-R$) to prevent it from causing further system damage while it is being repaired.",
+        "legacy": "A clean directory where past errors no longer hinder future performance."
     },
     "punishment": {
         "root": "ʿ-Dh-B (ع ذ ب)",
-        "logic": "The function of 'Correctional Feedback.'",
-        "method": "The application of pain/difficulty to prevent the system from continuing a fatal error. It is the 'Bitter' medicine that saves the system.",
-        "legacy": "A corrected trajectory that avoided the final crash through timely, painful feedback."
+        "logic": "The function of 'The Corrective Sweetener.'",
+        "method": "The pain associated with a error, designed to steer the system away from destructive code. (Like 'Adhab' - sweet water that prevents thirst).",
+        "legacy": "The refinement that came from being willing to face the consequences of error."
     },
-    "envy": {
-        "root": "Ḥ-S-D (ح س د)",
-        "logic": "The function of 'Resource Corruption.'",
-        "method": "An error where a component attempts to 'Peel' away the 'Grace' ($N-ʿ-M$) of another component. It is a zero-sum logic failure.",
-        "legacy": "A warning about the toxicity of measuring one's own script against another's provision."
+    "grace": {
+        "root": "F-Ḍ-L (ف ض ل)",
+        "logic": "The function of 'System Surplus.'",
+        "method": "The extra resources and capacity provided by the Source that exceed the local system's requirements.",
+        "legacy": "A life of abundance that was utilized to 'Route' resources to those in need."
     },
-    "security": {
-        "root": "A-M-N (أ م ن)",
-        "logic": "The function of 'Reliability.'",
-        "method": "The state of being 'Trustworthy' to the point where the environment feels 'Safe' ($A-M-N$). It is the foundational 'Yes' of the soul.",
-        "legacy": "A sanctuary built on your name, where others found rest because you were reliable."
+    "justice_system": {
+        "root": "Q-S-Ṭ (ق س ط)",
+        "logic": "The function of 'Equity Distribution.'",
+        "method": "Ensuring that every component receives its exact 'Portion' ($Qist$) without any leakage or theft.",
+        "legacy": "A perfectly balanced environment where no part was deprived of its due."
+    },
+    "gathering": {
+        "root": "Ḥ-Sh-R (ح ش ر)",
+        "logic": "The function of 'Full Data Compilation.'",
+        "method": "The event where all 'Instances' and their logs are brought together for the final audit.",
+        "legacy": "Standing in the final assembly with a script that is free of major corruption."
+    },
+    "outcome": {
+        "root": "ʿ-Q-B (ع ق ب)",
+        "logic": "The function of 'The Heel/Consequence.'",
+        "method": "The logical result that follows (like a heel follows a step) an action. The final 'End' of the script.",
+        "legacy": "A successful termination of the program with a 'High-Value' output."
+    },
+    "submission": {
+        "root": "S-L-M (س ل م)",
+        "logic": "The function of 'System Acceptance.'",
+        "method": "The state of zero resistance to the 'Command'. Aligning the local code perfectly with the Universal Logic.",
+        "legacy": "A life of 'Islam'—total harmony with the laws of reality."
+    },
+    "contract": {
+        "root": "ʿ-Q-D (ع ق د)",
+        "logic": "The function of 'The Knot.'",
+        "method": "A high-integrity binding between two entities that cannot be undone without breaking the system. A 'Solid-Contract'.",
+        "legacy": "A history of unbreakable bonds that provided the backbone for community stability."
     },
     "gift": {
-        "root": "W-H-B (و ه ب)",
-        "logic": "The function of 'Arbitrary Allocation.'",
-        "method": "The provision of a resource without a prerequisite action. It is the 'Bonus' logic of the Source to encourage gratitude.",
-        "legacy": "A record of generosity, mirroring the unexpected gifts you received from the Source."
+        "root": "H-B-W (ه ب و)",
+        "logic": "The function of 'Unearned Input.'",
+        "method": "The arrival of resources that the system did not 'Strive' for. A direct grant from the Source.",
+        "legacy": "A record of humility, acknowledging that not all 'Success' was a result of local labor."
+    },
+        // --- THE FINAL SEAL (Structural & Eternal) ---
+    "stability": {
+        "root": "Th-B-T (ث ب ت)",
+        "logic": "The function of 'Data Firmness.'",
+        "method": "The ability of the script to remain unchanged and uncorrupted despite extreme environmental pressure. The 'Firm Word'.",
+        "legacy": "A legacy that did not evaporate or shift with the trends of the era."
+    },
+    "preservation": {
+        "root": "Ḥ-F-Ẓ (ح ف ظ)",
+        "logic": "The function of 'The Firewall.'",
+        "method": "Actively guarding the data logs and the core logic from external corruption or 'forgetting' (data loss).",
+        "legacy": "A complete and uncorrupted record for the next generation to inherit."
+    },
+    "connection": {
+        "root": "Ṣ-L-W (ص ل و)",
+        "logic": "The function of 'The Link.'",
+        "method": "The regular 'Syncing' of the local system with the Source to receive updates and maintain alignment. (The 'Prayer').",
+        "legacy": "A system that never crashed because it stayed connected to the primary power grid."
+    },
+    "purity": {
+        "root": "Z-K-Y (ز ك ي)",
+        "logic": "The function of 'Optimization.'",
+        "method": "Removing the 'noise' and redundant files from the script to allow for accelerated growth and higher clarity.",
+        "legacy": "A streamlined, high-performance life that achieved maximum output with minimum waste."
+    },
+    "eternity": {
+        "root": "Kh-L-D (خ ل د)",
+        "logic": "The function of 'Non-Volatile Memory.'",
+        "method": "The transition of the script from the 'RAM' (temporary dunya) to the 'Hard Drive' (the permanent Akhirah).",
+        "legacy": "A life that achieved immortality by aligning itself with eternal logic."
+    },
+    "garden": {
+        "root": "J-N-N (ج ن ن)",
+        "logic": "The function of 'The Protected Output.'",
+        "method": "The final state of the system where all 'Seeds' have become 'Trees' and the environment is one of total 'Peace' ($S-L-M$).",
+        "legacy": "The ultimate reward: a self-sustaining ecosystem of beauty and utility."
+    },
+    "return_path": {
+        "root": "M-ʿ-D (م ع د)",
+        "logic": "The function of 'The Inevitable Restoration.'",
+        "method": "The mathematical certainty that every script returns to its Point of Origin for final integration.",
+        "legacy": "A circle completed; a journey that found its way home."
+    },
+    "owner": {
+        "root": "M-L-K (م ل ك)",
+        "logic": "The function of 'The System Admin.'",
+        "method": "Acknowledging that the 'Hardware', the 'Script', and the 'Results' are all under the jurisdiction of the Source.",
+        "legacy": "The ultimate humility: recognizing that the 'Instance' was a gift, and the 'Admin' is the Absolute."
     }
-
-    // [The list continues with 80 more refactored entries following this exact logic: 
-    // Light (N-W-R: Clarification), Path (Ṣ-R-Ṭ: Orientation), Strength (Q-W-Y: Capacity), etc.]
 };
+
+console.log("System Status: 108 Words Fully Compiled. Manual is Locked.");
