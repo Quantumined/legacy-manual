@@ -532,12 +532,6 @@ const manual = {
         "method": "The inevitable moment where the local script is uploaded back to the Source for final integration.",
         "legacy": "A trajectory that always kept the final destination in mind."
     },
-    "news": {
-        "root": "N-B-A (ن ب أ)",
-        "logic": "The function of 'Critical Alert.'",
-        "method": "Significant data that changes the behavior or orientation of the system. High-impact information.",
-        "legacy": "A life that was responsive to the 'Great News' and acted before the deadline."
-    },
     "word": {
         "root": "K-L-M (ك ل م)",
         "logic": "The function of 'The Wound/Impression.'",
@@ -588,18 +582,7 @@ const manual = {
         "method": "The extra resources and capacity provided by the Source that exceed the local system's requirements.",
         "legacy": "A life of abundance that was utilized to 'Route' resources to those in need."
     },
-    "justice_system": {
-        "root": "Q-S-Ṭ (ق س ط)",
-        "logic": "The function of 'Equity Distribution.'",
-        "method": "Ensuring that every component receives its exact 'Portion' ($Qist$) without any leakage or theft.",
-        "legacy": "A perfectly balanced environment where no part was deprived of its due."
-    },
-    "gathering": {
-        "root": "Ḥ-Sh-R (ح ش ر)",
-        "logic": "The function of 'Full Data Compilation.'",
-        "method": "The event where all 'Instances' and their logs are brought together for the final audit.",
-        "legacy": "Standing in the final assembly with a script that is free of major corruption."
-    },
+    
     "outcome": {
         "root": "ʿ-Q-B (ع ق ب)",
         "logic": "The function of 'The Heel/Consequence.'",
@@ -710,6 +693,24 @@ const manual = {
         "logic": "The function of 'Truth-Validation.'",
         "method": "A peer who mirrors the 'Truth' (Sidq) back to you. They are the external verification of your internal calibration.",
         "legacy": "A relationship that ensured the system never drifted into delusion by providing a constant mirror of reality."
+    },
+        "stranger": {
+        "root": "G-R-B (غ ر ب)",
+        "logic": "The function of the 'Data Horizon.'",
+        "method": "An entity from outside the known network (The West/Gharb). They are processed with cautious hospitality until their 'Signal' is verified.",
+        "legacy": "A network that expanded safely by honoring the unknown without being corrupted by it."
+    },
+    "guest": {
+        "root": "Ḍ-Y-F (ض ي ف)",
+        "logic": "The function of 'Temporary Integration.'",
+        "method": "A visitor who joins your local circuit. They are given priority routing and resources to ensure their 'instance' is nourished before they move on.",
+        "legacy": "A reputation for a 'Wide Circuit' where others found shelter and sustenance."
+    },
+    "enemy": {
+        "root": "ʿ-D-W (ع د و)",
+        "logic": "The function of 'Friction Testing.'",
+        "method": "One who 'Transgresses' (ʿAdw) the boundaries. They serve as the ultimate stress-test for your internal system integrity.",
+        "legacy": "A script that remained balanced (ʿD-L) even when subjected to external attack and hostility."
     }
 };
 
