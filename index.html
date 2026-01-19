@@ -51,13 +51,11 @@
             background: rgba(62, 39, 35, 0.98); 
             display: flex; align-items: center; justify-content: center; z-index: 1000;
 
-            /* Fade-in animation */
+            /* Fade-in / Fade-out animation */
             opacity: 0;
-            animation: fadeIn 0.4s forwards;
+            transition: opacity 0.4s ease;
         }
-        @keyframes fadeIn {
-            to { opacity: 1; }
-        }
+        .modal-overlay.show { opacity: 1; }
 
         .modal-content {
             background: #ffffff; width: 90%; max-width: 500px; padding: 30px;
@@ -119,9 +117,16 @@
     </style>
 
     <script>
+        // Fade-in modal on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('introModal').classList.add('show');
+        });
+
+        // Fade-out modal on button click
         function closeModal() {
-            var modal = document.getElementById('introModal');
-            if (modal) { modal.style.display = 'none'; }
+            const modal = document.getElementById('introModal');
+            modal.classList.remove('show');
+            setTimeout(() => { modal.style.display = 'none'; }, 400);
         }
 
         function searchNoun() {
@@ -167,12 +172,8 @@
                 "sky": "sky", "high": "sky", "limitless": "sky", "elevation": "sky"
             };
 
-            if (noiseMap[query]) {
-                query = noiseMap[query];
-            }
-            
+            if (noiseMap[query]) { query = noiseMap[query]; }
             if (typeof manual === 'undefined') { output.innerHTML = "Error: data.js missing."; return; }
-            
             if (manual[query]) {
                 var item = manual[query];
                 output.innerHTML = `
@@ -182,9 +183,7 @@
                     <p><strong>Method:</strong> ${item.method}</p>
                     <p><strong>Legacy:</strong> ${item.legacy}</p>
                 `;
-            } else {
-                output.innerHTML = "<p style='color:#d32f2f;'>Role not found. Try 'Directory'.</p>";
-            }
+            } else { output.innerHTML = "<p style='color:#d32f2f;'>Role not found. Try 'Directory'.</p>"; }
         }
 
         function listAll() {
