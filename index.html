@@ -55,19 +55,20 @@
         #output-box { margin-top: 20px; padding: 20px; border-radius: 10px; min-height: 100px; text-align: left; border: 1px dashed #d7ccc8; }
         .root-highlight { color: #8b4513; font-weight: bold; font-size: 1.2em; }
 
-        /* PRINT STYLING - UPDATED FOR SINGLE PAGE LOCK */
+        /* PRINT STYLING - ABSOLUTE SINGLE PAGE FIX */
         #print-header { display: none; text-align: left; border-bottom: 2px solid #8b4513; margin-bottom: 20px; padding-bottom: 10px; }
         #print-header img { width: 80px; height: auto; margin-bottom: 10px; display: block; }
 
         @media print {
+            @page { margin: 0; size: auto; }
             * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
             
             body { 
                 background: white !important; 
                 padding: 0 !important; 
                 margin: 0 !important; 
-                height: 100%;
-                overflow: hidden; /* Prevent spillover page */
+                height: 100vh;
+                overflow: hidden !important; 
             }
             
             .modal-overlay, .search-box, .btn-action, .header img { display: none !important; }
@@ -77,11 +78,11 @@
                 border: none !important; 
                 max-width: 100% !important; 
                 margin: 0 !important; 
-                padding: 30px !important;
-                height: 95vh !important; /* Safety buffer */
-                min-height: 95vh !important;
+                padding: 40px !important;
+                height: 90vh !important; 
                 overflow: hidden !important; 
                 position: relative;
+                page-break-inside: avoid;
 
                 background-image: linear-gradient(rgba(255,255,255,0.94), rgba(255,255,255,0.94)), url('logo.png') !important;
                 background-repeat: no-repeat !important;
