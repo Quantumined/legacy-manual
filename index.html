@@ -55,7 +55,7 @@
         #output-box { margin-top: 20px; padding: 20px; border-radius: 10px; min-height: 100px; text-align: left; border: 1px dashed #d7ccc8; }
         .root-highlight { color: #8b4513; font-weight: bold; font-size: 1.2em; }
 
-        /* PRINT STYLING - ABSOLUTE SINGLE PAGE FIX */
+        /* PRINT STYLING - DEFINITIVE SINGLE PAGE SCALING */
         #print-header { display: none; text-align: left; border-bottom: 2px solid #8b4513; margin-bottom: 20px; padding-bottom: 10px; }
         #print-header img { width: 80px; height: auto; margin-bottom: 10px; display: block; }
 
@@ -69,6 +69,7 @@
                 margin: 0 !important; 
                 height: 100vh;
                 overflow: hidden !important; 
+                zoom: 95%; /* Shrink entire document */
             }
             
             .modal-overlay, .search-box, .btn-action, .header img { display: none !important; }
@@ -76,18 +77,20 @@
             .app-container { 
                 box-shadow: none !important; 
                 border: none !important; 
-                max-width: 100% !important; 
-                margin: 0 !important; 
+                max-width: 90% !important; 
+                margin: 0 auto !important; 
                 padding: 40px !important;
-                height: 90vh !important; 
+                height: 85vh !important; /* Aggressive safety buffer */
                 overflow: hidden !important; 
                 position: relative;
                 page-break-inside: avoid;
+                transform: scale(0.98);
+                transform-origin: top center;
 
                 background-image: linear-gradient(rgba(255,255,255,0.94), rgba(255,255,255,0.94)), url('logo.png') !important;
                 background-repeat: no-repeat !important;
                 background-position: center center !important;
-                background-size: 70% auto !important;
+                background-size: 60% auto !important;
             }
 
             #output-box, #print-header { 
