@@ -27,7 +27,7 @@
         /* WATERMARK: Oversized and Centered */
         .app-container::before {
             content: "";
-            position: absolute; /* FIX: was fixed */
+            position: fixed; /* fixed to viewport */
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -87,13 +87,13 @@
                 border: none !important; 
                 max-width: 100% !important; 
                 margin: 0 !important; 
-                min-height: 100vh !important; 
-                height: 100vh !important; 
+                min-height: auto !important; /* allow content to fit one page */
+                height: auto !important;     /* allow content to fit one page */
                 padding: 30px !important;
             }
             
             .app-container::before { 
-                position: absolute;
+                position: fixed; /* fixed to page */
                 opacity: 0.04 !important; 
                 width: 100% !important; 
                 height: 100% !important; 
