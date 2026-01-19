@@ -71,11 +71,12 @@
                 margin: 0 !important; 
                 padding: 40px !important;
                 min-height: 98vh;
-                background-image: url('logo.png') !important;
+                position: relative;
+                /* WATERMARK FIX: Linear gradient overlay washes out the image */
+                background-image: linear-gradient(rgba(255,255,255,0.94), rgba(255,255,255,0.94)), url('logo.png') !important;
                 background-repeat: no-repeat !important;
                 background-position: center center !important;
                 background-size: 80% auto !important;
-                position: relative;
             }
 
             #output-box, #print-header { 
