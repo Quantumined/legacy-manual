@@ -24,9 +24,10 @@
             min-height: 80vh; 
         }
 
+        /* WATERMARK: Oversized and Viewport-Centered */
         .app-container::before {
             content: "";
-            position: fixed; 
+            position: absolute; /* FIXED: was fixed */
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -44,6 +45,7 @@
         .header img { width: 100px; height: auto; margin-bottom: 10px; border-radius: 12px; }
         h1 { margin: 0; color: #8b4513; font-size: 24px; letter-spacing: 1px; }
 
+        /* MODAL (POPUP) STYLES */
         .modal-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(62, 39, 35, 0.98); 
@@ -63,6 +65,7 @@
             font-weight: bold; font-size: 16px; cursor: pointer; text-transform: uppercase;
         }
 
+        /* SEARCH INTERFACE STYLES */
         .search-box { margin: 20px 0; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; z-index: 2; position: relative; }
         input { padding: 12px; border: 2px solid #d7ccc8; border-radius: 8px; width: 70%; font-size: 16px; outline: none; }
         .btn-action { padding: 12px 20px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; color: white; }
@@ -73,6 +76,7 @@
         #output-box { margin-top: 20px; padding: 20px; border-radius: 10px; min-height: 100px; text-align: left; border: 1px dashed #d7ccc8; background: rgba(255, 255, 255, 0.7); z-index: 2; position: relative; }
         .root-highlight { color: #8b4513; font-weight: bold; font-size: 1.2em; }
 
+        /* PRINT STYLING - SINGLE PAGE FIX */
         #print-header { display: none; text-align: left; border-bottom: 2px solid #8b4513; margin-bottom: 20px; padding-bottom: 10px; }
         #print-header img { width: 60px; height: auto; margin-bottom: 10px; display: block; }
 
@@ -92,7 +96,7 @@
             }
             
             .app-container::before { 
-                position: fixed; 
+                position: absolute;
                 opacity: 0.04 !important; 
                 width: 100% !important; 
                 height: 100% !important; 
@@ -107,108 +111,28 @@
             h1 { color: #8b4513 !important; }
         }
     </style>
-
-    <script>
-        function closeModal() {
-            var modal = document.getElementById('introModal');
-            if (modal) { modal.style.display = 'none'; }
-        }
-
-        function searchNoun() {
-            var query = document.getElementById('nounInput').value.toLowerCase().trim();
-            var output = document.getElementById('output-box');
-
-            const noiseMap = {
-                "husband":"husband","spouse":"husband","partner":"husband","marriage":"husband",
-                "son":"son","child":"son","boy":"son","offspring":"son","inheritance":"son",
-                "provider":"provider","worker":"provider","breadwinner":"provider","money":"provider","finances":"provider",
-                "stranger":"stranger","unknown":"stranger","outsider":"stranger","foreigner":"stranger","hidden":"stranger",
-                "guest":"guest","visitor":"guest","client":"guest","host":"guest","hospitality":"guest",
-                "enemy":"enemy","hater":"enemy","opponent":"enemy","rival":"enemy","attacker":"enemy",
-                "father":"father","dad":"father","parent":"father","ancestor":"father",
-                "mother":"mother","mom":"mother","origin":"mother","womb":"mother",
-                "teacher":"teacher","mentor":"teacher","professor":"teacher","guide":"teacher",
-                "student":"student","learner":"student","apprentice":"student","disciple":"student",
-                "guardian":"guardian","protector":"guardian","security":"guardian","police":"guardian",
-                "counselor":"counselor","helper":"counselor","ally":"counselor","witness":"counselor",
-                "consultant":"consultant","advisor":"consultant","expert":"consultant",
-                "friend":"friend","companion":"friend","bestie":"friend","mirror":"friend",
-                "leader":"leader","boss":"leader","manager":"leader","captain":"leader",
-                "brother":"brother","sibling":"brother","kin":"brother","support":"brother",
-                "heart":"heart","emotions":"heart","feelings":"heart","anxiety":"heart","sadness":"heart",
-                "stress":"heart","pressure":"heart","overwhelmed":"heart","burnout":"heart",
-                "intellect":"intellect","mind":"intellect","brain":"intellect","thought":"intellect","confusion":"intellect",
-                "wisdom":"wisdom","judgment":"wisdom","insight":"wisdom","discretion":"wisdom",
-                "patience":"patience","waiting":"patience","anger":"patience","frustration":"patience","calm":"patience",
-                "striving":"striving","effort":"striving","work":"striving","labor":"striving","hustle":"striving",
-                "tongue":"tongue","speech":"tongue","words":"tongue","gossip":"tongue","truth":"tongue",
-                "eye":"eye","sight":"eye","perception":"eye","watching":"eye",
-                "ear":"ear","hearing":"ear","listening":"ear","sound":"ear","noise":"ear",
-                "hand":"hand","power":"hand","action":"hand","reach":"hand","doing":"hand",
-                "foot":"foot","travel":"foot","path":"foot","movement":"foot","steps":"foot",
-                "failure":"loser","loser":"loser","inefficient":"loser","waste":"loser","regret":"loser",
-                "broke":"provider","poor":"provider","debt":"provider",
-                "liar":"liar","fake":"liar","deception":"liar","betrayal":"liar",
-                "oppressor":"oppressor","bully":"oppressor","unfair":"oppressor","tyrant":"oppressor",
-                "success":"cleaving","winner":"cleaving","victory":"cleaving","breakthrough":"cleaving",
-                "death":"return","end":"return","dying":"return","closing":"return",
-                "slave":"slave","utility":"slave","servant":"slave","devotion":"slave",
-                "earth":"earth","ground":"earth","nature":"earth","humility":"earth","low":"earth",
-                "sky":"sky","high":"sky","elevation":"sky","limitless":"sky"
-            };
-
-            if (noiseMap[query]) query = noiseMap[query];
-
-            if (typeof manual === 'undefined') {
-                output.innerHTML = "Error: data.js missing.";
-                return;
-            }
-
-            if (manual[query]) {
-                var item = manual[query];
-                output.innerHTML = `
-                    <h2 style="text-transform: capitalize; color: #8b4513; margin-top:0;">${query}</h2>
-                    <p><span class="root-highlight">Root: ${item.root}</span></p>
-                    <p><strong>Logic:</strong> ${item.logic}</p>
-                    <p><strong>Method:</strong> ${item.method}</p>
-                    <p><strong>Legacy:</strong> ${item.legacy}</p>
-                `;
-            } else {
-                output.innerHTML = "<p style='color:#d32f2f;'>Role not found. Try 'Directory'.</p>";
-            }
-        }
-
-        function listAll() {
-            var output = document.getElementById('output-box');
-            if (typeof manual === 'undefined') { output.innerHTML = "Error: data.js missing."; return; }
-            var htmlContent = "<h3>System Directory:</h3><ul style='list-style:none; padding:0;'>";
-            for (var key in manual) {
-                if (key !== "instruction") {
-                    htmlContent += `<li style="margin-bottom:15px; border-bottom:1px solid #eee; padding-bottom:10px;">
-                        <strong style="text-transform: uppercase; color:#8b4513;">${key}</strong> | ${manual[key].root}<br>
-                        <small style="color: #5d4037;">${manual[key].method}</small>
-                    </li>`;
-                }
-            }
-            output.innerHTML = htmlContent + "</ul>";
-        }
-
-        function printManual() {
-            var output = document.getElementById('output-box');
-            if (output.querySelector('em')) {
-                alert("Please search for a role or view the directory first.");
-                return;
-            }
-            window.print();
-        }
-    </script>
 </head>
 <body>
 
 <div id="introModal" class="modal-overlay">
     <div class="modal-content">
         <div class="intro-title">System Initialization: The Pen's Script</div>
-        <button type="button" class="btn-begin" onclick="closeModal()">Begin Transformation</button>
+        
+        <p style="font-size: 15px; line-height: 1.6;">
+            This manual is a <strong>Refactoring Tool</strong> for human character. In a world of surface-level definitions, we return to the <strong>Root Logic</strong> ($A-Ṣ-L$) found in the Quranic $Q-L-M$ (The Pen) framework.
+        </p>
+        
+        <ul class="intro-list">
+            <li><strong>Nouns to Functions:</strong> We strip away the ego-driven titles of life and reveal the <em>Logic</em> behind them.</li>
+            <li><strong>The Method:</strong> Every role you hold—from Provider to Son—is a <em>Script</em> to be executed with precision.</li>
+            <li><strong>Legacy:</strong> This system is designed to be lived, mastered, and left behind as a guide for those who follow.</li>
+        </ul>
+        
+        <p style="font-style: italic; font-size: 13px; margin: 15px 0; color: #8b4513; border-top: 1px solid #eee; padding-top: 10px; text-align: center;">
+            "Calibrate your heart ($Q-L-B$), route your provisions ($R-Z-Q$), and master the pairing ($Z-W-J$)."
+        </p>
+
+        <button class="btn-begin" onclick="closeModal()">Begin Transformation</button>
     </div>
 </div>
 
@@ -216,18 +140,20 @@
     <div id="print-header">
         <img src="logo.png" alt="Seal">
         <h1>THE PEN'S SCRIPT</h1>
+        <p><strong>Initialization:</strong> Refactoring identity into functional logic.</p>
     </div>
 
     <div class="header">
         <img src="logo.png" alt="The Pen's Script Logo">
         <h1>THE PEN'S SCRIPT</h1>
+        <p style="color: #6d4c41; font-size: 0.9em;">Universal Operating Manual</p>
     </div>
 
     <div class="search-box">
         <input type="text" id="nounInput" placeholder="Search Role (e.g., Provider)...">
-        <button type="button" class="btn-action btn-search" onclick="searchNoun()">Search</button>
-        <button type="button" class="btn-action btn-view" onclick="listAll()">Directory</button>
-        <button type="button" class="btn-action btn-print" onclick="printManual()">Print Manual</button>
+        <button class="btn-action btn-search" onclick="searchNoun()">Search</button>
+        <button class="btn-action btn-view" onclick="listAll()">Directory</button>
+        <button class="btn-action btn-print" onclick="printManual()">Print Manual</button>
     </div>
 
     <div id="output-box">
@@ -235,7 +161,7 @@
     </div>
 </div>
 
-<script src="data.js" defer></script>
+<script src="data.js"></script>
 
 </body>
 </html>
